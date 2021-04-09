@@ -1,212 +1,168 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-<meta charset="UTF-8">
-<title>JavaScript Canvas</title>
-
-
-<script type="text/javascript">
-
-
-window.addEventListener('load', eventWindowLoaded, false);
-
-function eventWindowLoaded() {
-   canvasApp();
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: 'Lato', sans-serif;
 }
 
-function Create2DArray(rows) {
-  var arr = [];
+.overlay1 {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-y: hidden;
+  transition: 0.5s;
+}
 
-  for (var i=0;i<rows;i++) {
-     arr[i] = [];
+.overlay1-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay1 a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay1 a:hover, .overlay1 a:focus {
+  color: #f1f1f1;
+}
+
+.overlay1 .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay1 {overflow-y: auto;}
+  .overlay1 a {font-size: 20px}
+  .overlay1 .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
   }
-
-  return arr;
 }
 
+//////////////////////////////////
 
-function canvasApp(){
+.overlay2 {
+  height: 100%;
+  width: 0%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+} 
 
-
-   var theCanvas = document.getElementById("canvas");
-theCanvas.addEventListener("mousemove",onMouseMove,false);
-theCanvas.addEventListener("click",onMouseClick,false);
-
- 
-
-   if (!theCanvas || !theCanvas.getContext) {
-      return;
-   }
-
-
-   var context = theCanvas.getContext("2d");
-
-   if (!context) {
-      return;
-   }
-
-   //canvasApp level variables
-   var keyPressList = [];
-   var windowWidth = 400;
-   var windowHeight = 400;
-   var mouseX = 0;
-   var mouseY = 0;
-
- 
-
-   reset();
-
-   gameLoop();
-
-///////////////////////////////////////////////////////
-   function gameLoop()
-   {
-        var FRAME_RATE = 10;
-        var intervalTime = 1000/FRAME_RATE;
-
-        input();
-        paint();
-        animate();
-        window.setTimeout(gameLoop, intervalTime);
-   }
-
-   document.onkeydown = function(e){
-      e = e?e:window.event;
-      keyPressList[e.keyCode] = true;
-   }
-
-   document.onkeyup = function(e){
-      e = e?e:window.event;
-      keyPressList[e.keyCode] = false;
-   };
-
-///////////////////////////////////////////////////////
-   function onMouseMove(e)
-   {
-
-   }
-   function onMouseClick(e)
-   {
-
-   }
-   function input()
-   {
-// Tab:9 Enter:13 Space:32 0:48 A:65 a:97 Delete:127
-       if (keyPressList[27]==true){
-       //Escape
-           reset();
-       }
-
-       if (keyPressList[37]==true) {
-       //Left arrow
-       }
-
-       if (keyPressList[38]==true) {
-       //Up arrow
-       }
-
-       if (keyPressList[39]==true) {
-       //Right arrow
-       }
-       if (keyPressList[40]==true) {
-       //Down arrow
-       }
-
-   }
-
-   function paint()
-   {
-   // draw background
-    context.fillStyle = '#ffffff';
-    context.fillRect(0, 0, getWidth2(), getHeight2());
-    context.strokeStyle = '#000000';
-    context.strokeRect(0, 0, getWidth2(), getHeight2());
-
-    {
-      context.fillStyle = "rgb(255,0,0)"; 
-      context.beginPath();
-      context.fillRect(getX(0)+getWidth2()/4,
-      getY(0)+getHeight2()/4,
-      getWidth2()/2,
-      getHeight2()/2);
-      context.closePath(); 
-    }  
-    {
-      context.fillStyle = '#000000';
-      context.font = '30px sans-serif';
-      context.textBaseline = 'top';
-      context.fillText  ("Some Text", 50, 50);
-    }
-
-    drawCircle(300,100,0,8,8);
-
-    context.restore(); 
-
-   }
-
-   function drawCircle(xpos,ypos,rot,xscale,yscale)
-   {
-        context.save(); //save current state in stack
-        context.setTransform(1,0,0,1,0,0);
-
-        context.translate(xpos,ypos);
-        context.rotate(rot);
-        context.scale(xscale,yscale);
-        context.fillStyle = "rgb(0,0,0)"; 
-
-         context.beginPath();
-         context.arc(0,0,4,0,Math.PI*2,true);
-         context.closePath();
-         context.fill();
-
-
-        context.restore(); //pop old state on to screen
-   }
-
- 
-
-   function reset()
-   {
-
-   }
-   function animate()
-   {
-
-   }
-////////////////////////////////////////////////////////
-   function getX(x)
-   {
-     return(x);
-   }
-   function getY(y)
-   {
-     return(y);
-   }
-   function getYNormal(y)
-   {
-     return(windowHeight-y);
-   }
-   function getWidth2()
-   {
-     return(windowWidth);
-   }
-   function getHeight2()
-   {
-     return(windowHeight);
-   }
-
-
+.overlay2-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
 }
 
-</script>
+.overlay2 a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay2 a:hover, .overlay2 a:focus {
+  color: #f1f1f1;
+}
+
+.overlay2 .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay2 {overflow-y: auto;}
+  .overlay2 a {font-size: 20px}
+  .overlay2 .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+</style>
 </head>
-
-
 <body>
 
-<canvas id="canvas" width="400" height="500"  style="position:absolute;top: 50px; left: 50px;">
- Your browser does not support HTML5 Canvas.
-</canvas>
+<div id="myNav" class="overlay1">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay1-content">
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+  </div>
+</div>
+
+<div id="myNav" class="overlay2">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay2-content">
+    <a href="#">What</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+  </div>
+</div>
+
+<h2>Fullscreen Overlay Nav Example</h2>
+<p>Click on the element below to open the fullscreen overlay navigation menu.</p>
+<p>In this example, the navigation menu will slide downwards from the top:</p>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; opendown</span>
+
+<script>
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
+}
+</script>
+    
+/////////////////////
+
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; openleft</span>
+
+<script>
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
+}
+</script>
 
 </body>
 </html>
