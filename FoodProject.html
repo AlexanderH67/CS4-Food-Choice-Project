@@ -1,6 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>MainPage</title>
+    <meta charset="utf-8"/>
+    <style type="text/css">
+
+    </style>
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  </head>
+  	<body>
+      The following image works as a link:<br>
+      <a href="https://www.qries.com/">
+         <img alt="Qries" src="https://www.qries.com/images/banner_logo.png"
+         width="150" height="70">
+      </a>
+   </body>
+<br>
+
+    <script src="js/home.js"></script>
+</body>
+
+<head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {
@@ -57,9 +77,16 @@ body {
   right: 35px;
   }
 }
+</style>
+</head>
+<body>
 
-//////////////////////////////////
-
+<head>
+<meta name="viewport2" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: 'Lato', sans-serif;
+}
 .overlay2 {
   height: 100%;
   width: 0%;
@@ -67,8 +94,8 @@ body {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0, 0.9);
+  background-color: rgb(255,255,255);
+  background-color: rgba(255,255,255, 0.9);
   overflow-x: hidden;
   transition: 0.5s;
 } 
@@ -102,7 +129,6 @@ body {
 }
 
 @media screen and (max-height: 450px) {
-  .overlay2 {overflow-y: auto;}
   .overlay2 a {font-size: 20px}
   .overlay2 .closebtn {
   font-size: 40px;
@@ -115,8 +141,8 @@ body {
 </head>
 <body>
 
-<div id="myNav" class="overlay1">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+<div id="myNav1" class="overlay1">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav1()">&times;</a>
   <div class="overlay1-content">
     <a href="#">About</a>
     <a href="#">Services</a>
@@ -125,42 +151,66 @@ body {
   </div>
 </div>
 
-<div id="myNav" class="overlay2">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+<div id="myNav2" class="overlay2">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
   <div class="overlay2-content">
-    <a href="#">What</a>
-    <a href="#">Services</a>
-    <a href="#">Clients</a>
-    <a href="#">Contact</a>
+    <fieldset>
+<legend>Student Information</legend>
+  <body>
+    <div id="request">
+      <select id="grade" name="grade">
+            <option selected="selected" value="United States">United States</option>
+            <option value="Canada">Canada</option>
+            <option value="Australia">Australia</option>
+            <option value="Japan">Japan</option>
+          </select>
+          <div>
+              <br>
+          <label>Credit/Debit Card:</label>
+      <input id="Credit" name="title" type="text"/>
+      <br>
+      <label>or </label>
+      <br>
+      <label>PayPal:</label>
+      <input id="PayPal" name="title" type="text"/>
+          <br>
+          <br>
+
+  </body>
+      <input id="TheButton" type="button" value="Send" />
+
+ </fieldset>
+    <script src="js/home.js"></script>
+
+
+  </body>
   </div>
 </div>
 
-<h2>Fullscreen Overlay Nav Example</h2>
-<p>Click on the element below to open the fullscreen overlay navigation menu.</p>
-<p>In this example, the navigation menu will slide downwards from the top:</p>
-<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; opendown</span>
+<span style="font-size:25px;cursor:pointer" onclick="openNav1()">&#9776; opendown</span>
 
 <script>
-function openNav() {
-  document.getElementById("myNav").style.height = "100%";
+function openNav1() {
+  document.getElementById("myNav1").style.height = "100%";
 }
 
-function closeNav() {
-  document.getElementById("myNav").style.height = "0%";
+function closeNav1() {
+  document.getElementById("myNav1").style.height = "0%";
 }
 </script>
-    
-/////////////////////
 
-<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; openleft</span>
+<div>
+<br>
+
+<span style="font-size:25px;cursor:pointer" onclick="openNav2()">&#9776; Payment</span>
 
 <script>
-function openNav() {
-  document.getElementById("myNav").style.height = "100%";
+function openNav2() {
+  document.getElementById("myNav2").style.width = "100%";
 }
 
-function closeNav() {
-  document.getElementById("myNav").style.height = "0%";
+function closeNav2() {
+  document.getElementById("myNav2").style.width = "0%";
 }
 </script>
 
