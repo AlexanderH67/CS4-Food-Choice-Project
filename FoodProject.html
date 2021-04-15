@@ -180,12 +180,9 @@ body {
 </head>
 <body>
 
-<h2>Opacity with Box</h2>
-<p>Hover over the image to see the effect.</p>
-
 <div class="container">
   <img src="https://mail.google.com/mail/u/0?ui=2&ik=abe00839c1&attid=0.3&permmsgid=msg-f:1696859465112741543&th=178c74b173cde6a7&view=att&disp=safe&realattid=f_knex0ofn0" alt="Burger" class="image" style="width:100%; height:500px"onclick="openNav1()">
-  <div class="middle">
+  <div class="middle" onclick="openNav1()">
     <div class="text">Hamburger</div>
   </div> 
 </div>
@@ -194,8 +191,8 @@ body {
 
 <meta name="pizza" content="width=device-width, initial-scale=1">
 <style>
-.container {
-  position: relative;
+.container2 {
+  transform: translate(100%, -100.5%);
   width: 35%;
 }
 
@@ -208,7 +205,7 @@ body {
   backface-visibility: hidden;
 }
 
-.middle {
+.middle2 {
   transition: .5s ease;
   opacity: 0;
   position: absolute;
@@ -219,15 +216,15 @@ body {
   text-align: center;
 }
 
-.container:hover .image {
+.container2:hover .image {
   opacity: 0.3;
 }
 
-.container:hover .middle {
+.container2:hover .middle2 {
   opacity: 1;
 }
 
-.text {
+.text2 {
   background-color: #4CAF50;
   color: white;
   font-size: 16px;
@@ -237,22 +234,20 @@ body {
 </head>
 <body>
 
-<h2>Opacity with Box</h2>
-<p>Hover over the image to see the effect.</p>
-
-<div class="container">
+<div class="container2">
   <img src="https://mail.google.com/mail/u/0?ui=2&ik=abe00839c1&attid=0.1&permmsgid=msg-f:1696859502221112646&th=178c74ba17a2b546&view=att&disp=safe&realattid=f_knex1m5e0" alt="Pizza" class="image" style="width:100%; height:500px"onclick="openNav1()">
-  <div class="middle">
+  <div class="middle2">
     <div class="text">Pizza</div>
+    <img onclick="openNav1()">
   </div> 
 </div>
   
 </body>
 
-<meta name="pizza" content="width=device-width, initial-scale=1">
+<meta name="sushi" content="width=device-width, initial-scale=1">
 <style>
-.container {
-  position: relative;
+.container3 {
+  transform: translate(200%, -200.5%);
   width: 35%;
 }
 
@@ -265,7 +260,7 @@ body {
   backface-visibility: hidden;
 }
 
-.middle {
+.middle3 {
   transition: .5s ease;
   opacity: 0;
   position: absolute;
@@ -276,15 +271,15 @@ body {
   text-align: center;
 }
 
-.container:hover .image {
+.container3:hover .image {
   opacity: 0.3;
 }
 
-.container:hover .middle {
+.container3:hover .middle3 {
   opacity: 1;
 }
 
-.text {
+.text3 {
   background-color: #4CAF50;
   color: white;
   font-size: 16px;
@@ -294,13 +289,10 @@ body {
 </head>
 <body>
 
-<h2>Opacity with Box</h2>
-<p>Hover over the image to see the effect.</p>
-
-<div class="container">
-  <img src="https://mail.google.com/mail/u/0?ui=2&ik=abe00839c1&attid=0.2&permmsgid=msg-f:1696859502221112646&th=178c74ba17a2b546&view=att&disp=safe&realattid=f_knex1m5j1" alt="Pizza" class="image" style="width:100%; height:500px"onclick="openNav1()">
-  <div class="middle">
-    <div class="text">Pizza</div>
+<div class="container3">
+  <img src="https://mail.google.com/mail/u/0?ui=2&ik=abe00839c1&attid=0.2&permmsgid=msg-f:1696859502221112646&th=178c74ba17a2b546&view=att&disp=safe&realattid=f_knex1m5j1" alt="Sushi" class="image" style="width:100%; height:500px"onclick="openNav1()">
+  <div class="middle3">
+    <div class="text">Sushi</div>
   </div> 
 </div>
   
@@ -379,4 +371,3 @@ function closeNav1() {
 
 </body>
 </html>
-
