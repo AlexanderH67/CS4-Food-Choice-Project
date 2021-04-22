@@ -73,9 +73,127 @@ body {
 }
 </style>
 </head>
-<body>
 
 <head>
+<meta name="viewport3" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.overlay3 {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(255,255,255);
+  background-color: rgba(255,255,255, 0.9);
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+
+.overlay3-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay3 a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay3 a:hover, .overlay3 a:focus {
+  color: #f1f1f1;
+}
+
+.overlay3 .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay3 {overflow-y: auto;}
+  .overlay3 a {font-size: 20px}
+  .overlay3 .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+</style>
+</head>
+<head>
+
+  <meta name="viewport4" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.overlay4 {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(255,255,255);
+  background-color: rgba(255,255,255, 0.9);
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+
+.overlay4-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay4 a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay4 a:hover, .overlay4 a:focus {
+  color: #f1f1f1;
+}
+
+.overlay4 .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay4 {overflow-y: auto;}
+  .overlay4 a {font-size: 20px}
+  .overlay4 .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+</style>
+</head>
+
 <meta name="viewport2" content="width=device-width, initial-scale=1">
 <style>
 body {
@@ -235,8 +353,8 @@ body {
 <body>
 
 <div class="container2">
-  <img src="Pizza.jpg" id="PizzaImage" alt="Pizza" class="image" style="width:100%; height:500px"onclick="openNav1()">
-  <div class="middle2" onclick="openNav1()">
+  <img src="Pizza.jpg" id="PizzaImage" alt="Pizza" class="image" style="width:100%; height:500px"onclick="openNav3()">
+  <div class="middle2" onclick="openNav3()">
     <div class="text">Pizza</div>
     <img onclick="openNav1()">
   </div> 
@@ -290,8 +408,8 @@ body {
 <body>
 
 <div class="container3">
-    <img alt="Soup" id="theImage" src="soup.png" class="image" style="width:100%; height:500px"onclick="openNav1()">
-  <div class="middle3" onclick="openNav1()">
+    <img alt="Soup" id="theImage" src="soup.png" class="image" style="width:100%; height:500px"onclick="openNav4()">
+  <div class="middle3" onclick="openNav4()">
     <div class="text">Soup</div>
   </div> 
 </div>
@@ -319,19 +437,19 @@ body {
 <legend>Choose your Burger</legend>
 
 <input type="radio" id="big-mac" name="meat" value="big-mac">
-<label for="big-mac">Big Mac</label>
+<label for="big-mac">Big Mac($3.99)</label>
 <br>
 <input type="radio" id="quarter-pounder" name="meat" value="quarter-pounder">
-<label for="quarter-pounder">Quarter Pounder</label>
+<label for="quarter-pounder">Quarter Pounder($3.79)</label>
 <br>
 <input type="radio" id="double-quarter-pounder" name="meat" value="double-quarter-pounder">
-<label for="double-quarter-pounder">Double Quarter Pounder</label>
+<label for="double-quarter-pounder">Double Quarter Pounder($4.79)</label>
 <br>
-<input type="radio" id="mcdouble" name="meat" value="mcdouble">
-<label for="mcdouble">McDouble</label>
+<input type="radio" id="bacon-clubhouse" name="meat" value="bacon-clubhouse">
+<label for="bacon-clubhouse">Bacon ClubHouse Burger($4.49)</label>
 <br>
 <input type="radio" id="hamburger" name="meat" value="hamburger">
-<label for="hamburger">Hamburger</label>
+<label for="hamburger">Hamburger($1.00)</label>
 <br>
 <div>
 <br> 
@@ -352,6 +470,114 @@ body {
 <label for="pickles">Pickles</label>
 <input type="checkbox" id="pickles" name="Ingredients" value="pickles">
 <br>
+
+<br>
+
+<input type="reset" name="reset" value="Cancel Order">
+<input type="submit" name="send" value="Place Order">
+</fieldset>
+</form>
+</body>
+  </div>
+</div>
+
+<div id="myNav3" class="overlay3">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav3()">&times;</a>
+  <div class="overlay3-content">
+    <title>Pizza</title>
+</head>
+<body>
+<head>
+    <style>        
+    legend {
+        width: 144px;
+        padding: 2px;
+        margin-left: calc(5% - 78px - 8px);
+    }
+    </style>
+</head>
+  
+<body>
+<fieldset>
+<legend>Choose your Pizza</legend>
+
+<input type="radio" id="cheese" name="pizza" value="cheese">
+<label for="cheese">Cheese($6.00)</label>
+<br>
+<input type="radio" id="pepperoni" name="pizza" value="pepperoni">
+<label for="pepperoni">Pepperoni($6.00)</label>
+<br>
+<input type="radio" id="deluxe" name="pizza" value="deluxe">
+<label for="deluxe">Deluxe($8.00)</label>
+<br>
+<input type="radio" id="meat-deluxe" name="pizza" value="meat-deluxe">
+<label for="meat-deluxe">Meat Deluxe($8.00)</label>
+<br>
+<input type="radio" id="hawaiian" name="pizza" value="hawaiian">
+<label for="hawaiian">Hawaiian($8.00)</label>
+<div>
+<br> 
+<div> <b> Dip Choice: </b>
+<br>
+<label for="ranch">Ranch Dip</label>
+<input type="checkbox" id="ranch" name="Ingredients" value="ranch">
+<br>
+<label for="garlic">Garlic Dip</label>
+<input type="checkbox" id="garlic" name="Ingredients" value="garlic">
+<br>
+<label for="cheese-jalapeno">Cheese Jalapeño Dip</label>
+<input type="checkbox" id="cheese-jalapeno" name="Ingredients" value="cheese-jalapeno">
+
+<br>
+
+<input type="reset" name="reset" value="Cancel Order">
+<input type="submit" name="send" value="Place Order">
+</fieldset>
+</form>
+</body>
+  </div>
+</div>
+
+<div id="myNav4" class="overlay4">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav4()">&times;</a>
+  <div class="overlay4-content">
+    <title>Soup</title>
+</head>
+<body>
+<head>
+    <style>        
+    legend {
+        width: 144px;
+        padding: 2px;
+        margin-left: calc(5% - 78px - 8px);
+    }
+    </style>
+</head>
+  
+<body>
+<fieldset>
+<legend>Choose your Soup</legend>
+
+<input type="radio" id="creamy-chicken" name="soup" value="creamy-chicken">
+<label for="creamy-chicken">Creamy Chicken Soup</label>
+<br>
+<input type="radio" id="creamy-mushroom" name="soup" value="creamy-mushroom">
+<label for="creamy-mushroom">Creamy Mushroom Soup</label>
+<br>
+<input type="radio" id="clear-chicken" name="soup" value="clear-chicken">
+<label for="clear-chicken">Clear Chicken Soup</label>
+<div>
+<br>
+<div> <b>Side of Crackers: </b>
+<br>
+<label for="classic-crackers">Classic Crackers</label>
+<input type="checkbox" id="classic-crackers" name="Ingredients" value="classic-crackers">
+<br>
+<label for="veggie-crackers">Veggie Crackers</label>
+<input type="checkbox" id="veggie-crackers" name="Ingredients" value="veggie-crackers">
+<br>
+<label for="cheese-crackers">Cheese Crackers</label>
+<input type="checkbox" id="cheese-crackers" name="Ingredients" value="cheese-crackers">
 
 <br>
 
@@ -393,11 +619,29 @@ body {
 
  </fieldset>
     <script src="js/home.js"></script>
-
-
-  </body>
+ </body>
   </div>
 </div>
+
+<script>
+function openNav4() {
+  document.getElementById("myNav4").style.height = "100%";
+}
+
+function closeNav4() {
+  document.getElementById("myNav4").style.height = "0%";
+}
+</script>
+
+<script>
+function openNav3() {
+  document.getElementById("myNav3").style.height = "100%";
+}
+
+function closeNav3() {
+  document.getElementById("myNav3").style.height = "0%";
+}
+</script>
 
 <script>
 function openNav2() {
@@ -421,6 +665,7 @@ function closeNav1() {
   document.getElementById("myNav1").style.height = "0%";
 }
 </script>
-
 </body>
 </html>
+
+
