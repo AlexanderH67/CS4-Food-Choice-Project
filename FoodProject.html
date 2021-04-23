@@ -535,8 +535,8 @@ body {
 
 <br>
 
-<input type="reset" name="reset" value="Cancel Order">
-<input id="PlaceBurgerOrder" onclick="PlaceBurgerOrder()" type="submit" name="send" value="Place Order">
+<input type="reset" name="reset" value="Cancel Order" onclick="closeNav1()">
+<input id="PlaceBurgerOrder" onclick="PlaceBurgerOrder(); closeNav1()" type="submit" name="send" value="Place Order">
 </fieldset>
 </form>
 </body>
@@ -592,8 +592,8 @@ body {
 
 <br>
 
-<input type="reset" name="reset" value="Cancel Order">
-<input type="submit" name="send" value="Place Order">
+<input type="reset" name="reset" value="Cancel Order" onclick="closeNav3()">
+<input type="submit" name="send" value="Place Order" onclick="closeNav3()">
 </fieldset>
 </form>
 </body>
@@ -619,8 +619,14 @@ body {
 <body>
 <fieldset>
 
-<h4 style="color:green" id="result"></h3>   
+<h4 style="color:green" id="result"></h3>
+<h4 style="color:green" id="result2"></h3>
+<h4 style="color:green" id="result3"></h3>   
+<h4 style="color:green" id="result4"></h3>
+<h4 style="color:green" id="result5"></h3>
 <h4 style="color:red" id="error"></h3> 
+  <dir><br>
+
 
 </fieldset>
 </form>
@@ -671,8 +677,8 @@ body {
 
 <br>
 
-<input type="reset" name="reset" value="Cancel Order">
-<input type="submit" name="send" value="Place Order">
+<input type="reset" name="reset" value="Cancel Order" onclick="closeNav4()">
+<input type="submit" name="send" value="Place Order" onclick="closeNav4()">
 </fieldset>
 </form>
 </body>
@@ -705,51 +711,46 @@ body {
           <br>
 
   </body>
-      <input id="TheButton" type="button" value="Send" />
+      <input id="TheButton" type="button" value="Send" onclick="closeNav2()" />
 
  </fieldset>
-      <script src="public/js/home.js"></script>
+
  </body>
   </div>
 </div>
 
-<input type="radio" id="big-mac" name="meat" value="Big Mac">
-<label for="big-mac">Big Mac($3.99)</label>
+
+<input type="radio" id="creamy-chicken" name="soup" value="creamy-chicken">
+<label for="creamy-chicken">Creamy Chicken Soup</label>
 <br>
-<input type="radio" id="quarter-pounder" name="meat" value="Quarter Pounder">
-<label for="quarter-pounder">Quarter Pounder($3.79)</label>
+<input type="radio" id="creamy-mushroom" name="soup" value="creamy-mushroom">
+<label for="creamy-mushroom">Creamy Mushroom Soup</label>
 <br>
-<input type="radio" id="double-quarter-pounder" name="meat" value="Double Quarter Pounder">
-<label for="double-quarter-pounder">Double Quarter Pounder($4.79)</label>
-<br>
-<input type="radio" id="bacon-clubhouse" name="meat" value="Bacon ClubHouse Burger">
-<label for="bacon-clubhouse">Bacon ClubHouse Burger($4.49)</label>
-<br>
-<input type="radio" id="hamburger" name="meat" value="Hamburger">
-<label for="hamburger">Hamburger($1.00)</label>
-<br>
+<input type="radio" id="clear-chicken" name="soup" value="clear-chicken">
+<label for="clear-chicken">Clear Chicken Soup</label>
 <div>
-<br> 
-<div> <b> Ingredients: </b>
 <br>
-<label for="cheese">Cheese</label>
-<input type="checkbox" id="cheese" name="Ingredients" value="cheese">
+<div> <b>Side of Crackers: </b>
 <br>
-<label for="tomato">Tomato</label>
-<input type="checkbox" id="tomato" name="Ingredients" value="tomato">
+<label for="classic-crackers">Classic Crackers</label>
+<input type="checkbox" id="classic-crackers" name="Ingredients" value="classic-crackers">
 <br>
-<label for="lettuce">Lettuce</label>
-<input type="checkbox" id="lettuce" name="Ingredients" value="lettuce">
+<label for="veggie-crackers">Veggie Crackers</label>
+<input type="checkbox" id="veggie-crackers" name="Ingredients" value="veggie-crackers">
 <br>
-<label for="onions">Onions</label>
-<input type="checkbox" id="onions" name="Ingredients" value="onions">
+<label for="cheese-crackers">Cheese Crackers</label>
+<input type="checkbox" id="cheese-crackers" name="Ingredients" value="cheese-crackers">
+
 <br>
-<label for="pickles">Pickles</label>
-<input type="checkbox" id="pickles" name="Ingredients" value="pickles"> 
+
+<input type="reset" name="reset" value="Cancel Order" onclick="closeNav2()">
+<input type="submit" name="send" value="Place Order" onclick="closeNav2()">
+</fieldset>
 
 <span style="font-size:25px;cursor:pointer" onclick="openNav5()">&#9776; Orders</span>
 
 <script>
+  TotalRows = 3;
   function PlaceBurgerOrder() {
   var bigmac = document.getElementById("big-mac");
   var quarterPounder = document.getElementById("quarter-pounder");  
@@ -760,13 +761,36 @@ body {
   var tomato = document.getElementById("tomato");
   var lettuce = document.getElementById("cheese"); 
   var onions = document.getElementById("cheese"); 
+  var pickles = document.getElementById("pickles");
+
+   var cheesepizza = document.getElementById("cheesepizza");
+  var pepperoni = document.getElementById("pepperoni");  
+  var deluxe = document.getElementById("deluxe");  
+  var meatDeluxe = document.getElementById("meat-deluxe"); 
+  var hawaiian = document.getElementById("hawaiian");
+  var cheese = document.getElementById("ranch");  
+  var garlic = document.getElementById("garlic");
+  var cheesejalapeno = document.getElementById("cheese-jalapeno"); 
+
+  var creamyChicken = document.getElementById("creamy-chicken");
+  var creamyMushroom = document.getElementById("creamy-mushroom");  
+  var clearChicken = document.getElementById("clear-chicken");  
+  var baconClubHouse = document.getElementById("bacon-clubhouse"); 
+  var hamburger = document.getElementById("hamburger"); 
+  var cheese = document.getElementById("cheese");  
+  var tomato = document.getElementById("tomato");
+  var lettuce = document.getElementById("cheese"); 
+  var onions = document.getElementById("cheese"); 
   var pickles = document.getElementById("pickles"); 
 
 
-  if (bigmac.checked == true){  
-    var y = document.getElementById("big-mac").value;  
-    return document.getElementById("result").innerHTML = y; 
+
+  if (bigmac.checked == true){ 
+      var y = document.getElementById("big-mac").value; 
+      return document.getElementById("result").innerHTML = y;
+    
   }
+
   if (cheese.checked == true){  
     return document.getElementById("error").innerHTML = "Please mark only one checkbox either Yes or No";  
   }  
