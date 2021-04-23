@@ -11,9 +11,11 @@
   	<body>
   		<br>
 
-    <script src="js/home.js"></script>
+    
 </body>
 <span style="font-size:25px;cursor:pointer" onclick="openNav2()">&#9776; Payment</span>
+
+<span style="font-size:25px;cursor:pointer; position:relative; left:1510px;" onclick="openNav5()">&#9776; Orders</span>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -194,11 +196,71 @@ body {
 </style>
 </head>
 
+ <meta name="viewport5" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.overlay5 {
+  
+  height: 100%;
+  width: 0%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: rgb(255,255,255);
+  background-color: rgba(255,255,255, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay5-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay5 a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay5 a:hover, .overlay5 a:focus {
+  color: #f1f1f1;
+}
+
+.overlay5 .closebtn {
+  position: absolute;
+  top: 20px;
+  left: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay5 a {font-size: 20px}
+  .overlay5 .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+</style>
+</head>
+
 <meta name="viewport2" content="width=device-width, initial-scale=1">
 <style>
 body {
   font-family: 'Lato', sans-serif;
 }
+
 .overlay2 {
   height: 100%;
   width: 0%;
@@ -474,7 +536,7 @@ body {
 <br>
 
 <input type="reset" name="reset" value="Cancel Order">
-<input type="submit" name="send" value="Place Order">
+<input id="PlaceBurgerOrder" onclick="PlaceBurgerOrder()" type="submit" name="send" value="Place Order">
 </fieldset>
 </form>
 </body>
@@ -532,6 +594,34 @@ body {
 
 <input type="reset" name="reset" value="Cancel Order">
 <input type="submit" name="send" value="Place Order">
+</fieldset>
+</form>
+</body>
+  </div>
+</div>
+
+<div id="myNav5" class="overlay5">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav5()">&times;</a>
+  <div class="overlay5-content">
+    <title>Order</title>
+</head>
+<body>
+<head>
+    <style>        
+    legend {
+        width: 144px;
+        padding: 2px;
+        margin-left: calc(5% - 78px - 8px);
+    }
+    </style>
+</head>
+  
+<body>
+<fieldset>
+
+<h4 style="color:green" id="result"></h3>   
+<h4 style="color:red" id="error"></h3> 
+
 </fieldset>
 </form>
 </body>
@@ -618,10 +708,94 @@ body {
       <input id="TheButton" type="button" value="Send" />
 
  </fieldset>
-    <script src="js/home.js"></script>
+      <script src="public/js/home.js"></script>
  </body>
   </div>
 </div>
+
+<input type="radio" id="big-mac" name="meat" value="Big Mac">
+<label for="big-mac">Big Mac($3.99)</label>
+<br>
+<input type="radio" id="quarter-pounder" name="meat" value="Quarter Pounder">
+<label for="quarter-pounder">Quarter Pounder($3.79)</label>
+<br>
+<input type="radio" id="double-quarter-pounder" name="meat" value="Double Quarter Pounder">
+<label for="double-quarter-pounder">Double Quarter Pounder($4.79)</label>
+<br>
+<input type="radio" id="bacon-clubhouse" name="meat" value="Bacon ClubHouse Burger">
+<label for="bacon-clubhouse">Bacon ClubHouse Burger($4.49)</label>
+<br>
+<input type="radio" id="hamburger" name="meat" value="Hamburger">
+<label for="hamburger">Hamburger($1.00)</label>
+<br>
+<div>
+<br> 
+<div> <b> Ingredients: </b>
+<br>
+<label for="cheese">Cheese</label>
+<input type="checkbox" id="cheese" name="Ingredients" value="cheese">
+<br>
+<label for="tomato">Tomato</label>
+<input type="checkbox" id="tomato" name="Ingredients" value="tomato">
+<br>
+<label for="lettuce">Lettuce</label>
+<input type="checkbox" id="lettuce" name="Ingredients" value="lettuce">
+<br>
+<label for="onions">Onions</label>
+<input type="checkbox" id="onions" name="Ingredients" value="onions">
+<br>
+<label for="pickles">Pickles</label>
+<input type="checkbox" id="pickles" name="Ingredients" value="pickles"> 
+
+<span style="font-size:25px;cursor:pointer" onclick="openNav5()">&#9776; Orders</span>
+
+<script>
+  function PlaceBurgerOrder() {
+  var bigmac = document.getElementById("big-mac");
+  var quarterPounder = document.getElementById("quarter-pounder");  
+  var doubleQuarterPounder = document.getElementById("double-quarter-pounder");  
+  var baconClubHouse = document.getElementById("bacon-clubhouse"); 
+  var hamburger = document.getElementById("hamburger"); 
+  var cheese = document.getElementById("cheese");  
+  var tomato = document.getElementById("tomato");
+  var lettuce = document.getElementById("cheese"); 
+  var onions = document.getElementById("cheese"); 
+  var pickles = document.getElementById("pickles"); 
+
+
+  if (bigmac.checked == true){  
+    var y = document.getElementById("big-mac").value;  
+    return document.getElementById("result").innerHTML = y; 
+  }
+  if (cheese.checked == true){  
+    return document.getElementById("error").innerHTML = "Please mark only one checkbox either Yes or No";  
+  }  
+  else if (cheese.checked == true){  
+    var y = document.getElementById("cheese").value; 
+    console.log("cheese"); 
+    alert("bad create");
+    //return document.getElementById("result").innerHTML = y;   
+  }   
+  else if (tomato.checked == true){  
+    var n = document.getElementById("tomato").value;  
+    console.log("cheese");
+    //return document.getElementById("result").innerHTML = n;  
+  }  
+  else {  
+    return document.getElementById("error").innerHTML = "*Please mark any of checkbox";  
+  }  
+}  
+</script>
+
+<script>
+function openNav5() {
+  document.getElementById("myNav5").style.width = "100%";
+}
+
+function closeNav5() {
+  document.getElementById("myNav5").style.width = "0%";
+}
+</script>
 
 <script>
 function openNav4() {
