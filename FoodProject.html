@@ -751,7 +751,7 @@ body {
 
 <script>
   TotalRows = 3;
-  function PlaceBurgerOrder() {
+function PlaceBurgerOrder() {
   var bigmac = document.getElementById("big-mac");
   var quarterPounder = document.getElementById("quarter-pounder");  
   var doubleQuarterPounder = document.getElementById("double-quarter-pounder");  
@@ -763,34 +763,26 @@ body {
   var onions = document.getElementById("cheese"); 
   var pickles = document.getElementById("pickles");
 
-   var cheesepizza = document.getElementById("cheesepizza");
-  var pepperoni = document.getElementById("pepperoni");  
-  var deluxe = document.getElementById("deluxe");  
-  var meatDeluxe = document.getElementById("meat-deluxe"); 
-  var hawaiian = document.getElementById("hawaiian");
-  var cheese = document.getElementById("ranch");  
-  var garlic = document.getElementById("garlic");
-  var cheesejalapeno = document.getElementById("cheese-jalapeno"); 
-
-  var creamyChicken = document.getElementById("creamy-chicken");
-  var creamyMushroom = document.getElementById("creamy-mushroom");  
-  var clearChicken = document.getElementById("clear-chicken");  
-  var baconClubHouse = document.getElementById("bacon-clubhouse"); 
-  var hamburger = document.getElementById("hamburger"); 
-  var cheese = document.getElementById("cheese");  
-  var tomato = document.getElementById("tomato");
-  var lettuce = document.getElementById("cheese"); 
-  var onions = document.getElementById("cheese"); 
-  var pickles = document.getElementById("pickles"); 
-
-
-
-  if (bigmac.checked == true){ 
-      var y = document.getElementById("big-mac").value; 
-      return document.getElementById("result").innerHTML = y;
-    
+ if (hamburger.checked == true){  
+    var y = document.getElementById("hamburger").value;  
+    return document.getElementById("result").innerHTML = y; 
   }
-
+ if (baconClubHouse.checked == true){  
+    var y = document.getElementById("bacon-clubhouse").value;  
+    return document.getElementById("result").innerHTML = y; 
+  }
+if (doubleQuarterPounder.checked == true){  
+    var y = document.getElementById("double-quarter-pounder").value;  
+    return document.getElementById("result").innerHTML = y; 
+  }
+if (quarterPounder.checked == true){  
+    var y = document.getElementById("quarter-pounder").value;  
+    return document.getElementById("result").innerHTML = y; 
+  }
+  if (bigmac.checked == true){  
+    var y = document.getElementById("big-mac").value;  
+    return document.getElementById("result").innerHTML = y; 
+  }
   if (cheese.checked == true){  
     return document.getElementById("error").innerHTML = "Please mark only one checkbox either Yes or No";  
   }  
@@ -809,16 +801,6 @@ body {
     return document.getElementById("error").innerHTML = "*Please mark any of checkbox";  
   }  
 }  
-</script>
-
-<script>
-function openNav5() {
-  document.getElementById("myNav5").style.width = "100%";
-}
-
-function closeNav5() {
-  document.getElementById("myNav5").style.width = "0%";
-}
 </script>
 
 <script>
