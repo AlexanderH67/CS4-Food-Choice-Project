@@ -848,6 +848,108 @@ function PlaceBurgerOrder() {
   } */ 
 }  
 </script>
+    
+<script>
+function PlacePizzaOrder() {
+  var cheese = document.getElementById("cheese");
+  var pepperoni = document.getElementById("pepperoni");  
+  var deluxe = document.getElementById("deluxe");  
+  var meatdeluxe = document.getElementById("meat-deluxe"); 
+  var hawaiian = document.getElementById("hawaiian"); 
+  var ranch = document.getElementById("ranch");  
+  var garlic = document.getElementById("garlic");
+  var cheesejalapeno = document.getElementById("cheese-jalapeno");
+
+ if (cheese.checked == true){  
+    var y = document.getElementById("cheese").value;  
+    return document.getElementById("result").innerHTML = y; 
+  }
+ if (pepperoni.checked == true){  
+    var y = document.getElementById("pepperoni").value;  
+    return document.getElementById("result").innerHTML = y; 
+  }
+if (deluxe.checked == true){  
+    var y = document.getElementById("deluxe").value;  
+    return document.getElementById("result").innerHTML = y; 
+  }
+if (meatdeluxe.checked == true){  
+    var y = document.getElementById("meat-deluxe").value;  
+    return document.getElementById("result").innerHTML = y; 
+  }
+  if (hawaiian.checked == true){  
+    var y = document.getElementById("hawaiian").value;  
+    return document.getElementById("result").innerHTML = y; 
+  }
+  if (ranch.checked == true){  
+    return document.getElementById("error").innerHTML = "Please mark only one checkbox either Yes or No";  
+  }  
+  else if (ranch.checked == true){  
+    var y = document.getElementById("ranch").value; 
+    console.log("ranch"); 
+    alert("bad create");
+    //return document.getElementById("result").innerHTML = y;   
+  }   
+  else if (garlic.checked == true){  
+    var n = document.getElementById("garlic").value;  
+    console.log("garlic");
+    //return document.getElementById("result").innerHTML = n;  
+  }  
+   else if (cheesejalapeno.checked == true){  
+    var n = document.getElementById("cheesejalapeno").value;  
+    console.log("cheesejalapeno");
+    //return document.getElementById("result").innerHTML = n;  
+  }  
+  else {  
+    return document.getElementById("error").innerHTML = "*Please mark any of checkbox";  
+  }  
+}  
+</script>
+
+<script>
+function PlaceSoupOrder() {
+  var creamychicken = document.getElementById("creamy-chicken");
+  var creamymushroom = document.getElementById("creamy-mushroom");  
+  var clearchicken = document.getElementById("clear-chicken");  
+  var classiccrackers = document.getElementById("classic-crackers"); 
+  var veggiecrackers = document.getElementById("veggie-crackers"); 
+  var cheesecrackers = document.getElementById("cheese-crackers");  
+
+ if (creamychicken.checked == true){  
+    var y = document.getElementById("creamy-chicken").value;  
+    return document.getElementById("result").innerHTML = y; 
+  }
+ if (creamymushroom.checked == true){  
+    var y = document.getElementById("creamy-mushroom").value;  
+    return document.getElementById("result").innerHTML = y; 
+  }
+if (clearchicken.checked == true){  
+    var y = document.getElementById("clear-chicken").value;  
+    return document.getElementById("result").innerHTML = y; 
+  }
+  if (classiccrackers.checked == true){  
+    return document.getElementById("error").innerHTML = "Please mark only one checkbox either Yes or No";  
+  }  
+  else if (classiccrackers.checked == true){  
+    var y = document.getElementById("classic-crackers").value; 
+    console.log("classic-crackers"); 
+    alert("bad create");
+    //return document.getElementById("result").innerHTML = y;   
+  }   
+  else if (veggiecrackers.checked == true){  
+    var n = document.getElementById("veggie-crackers").value;  
+    console.log("veggie-crackers");
+    //return document.getElementById("result").innerHTML = n;  
+  }  
+   else if (cheesecrackers.checked == true){  
+    var n = document.getElementById("cheese-crackers").value;  
+    console.log("cheese-crackers");
+    //return document.getElementById("result").innerHTML = n;  
+  }  
+  else {  
+    return document.getElementById("error").innerHTML = "*Please mark any of checkbox";  
+  }  
+}  
+</script>
 
 <script>
   </script>
