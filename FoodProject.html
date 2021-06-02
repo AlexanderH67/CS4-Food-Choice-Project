@@ -593,7 +593,7 @@ body {
 <br>
 
 <input type="reset" name="reset" value="Cancel Order" onclick="closeNav3()">
-<input id="PlaceBurgerOrder" onclick="PlacePizzaOrder(); closeNav1()" type="submit" name="send" value="Place Order">
+<input type="submit" name="send" value="Place Order" onclick="closeNav3()">
 </fieldset>
 </form>
 </body>
@@ -618,19 +618,33 @@ body {
   
 <body>
 <fieldset>
-
+  
 <h4 style="color:green" id="result"></h3>
 <h4 style="color:green" id="result-1"></h3>
 <h4 style="color:green" id="result-2"></h3>
 <h4 style="color:green" id="result-3"></h3>
 <h4 style="color:green" id="result-4"></h3>
 <h4 style="color:green" id="result-5"></h3>
+
+<h4 style="color:green" id="newresult"></h3>
+<h4 style="color:green" id="newresult-1"></h3>
+<h4 style="color:green" id="newresult-2"></h3>
+<h4 style="color:green" id="newresult-3"></h3>
+<h4 style="color:green" id="newresult-4"></h3>
+<h4 style="color:green" id="newresult-5"></h3>
+
 <h4 style="color:green" id="result2"></h3>
+
 <h4 style="color:green" id="result3"></h3>
+
 <h4 style="color:green" id="result4"></h3>
+
 <h4 style="color:green" id="result5"></h3>
+
 <h4 style="color:green" id="result6"></h3>
+
 <h4 style="color:red" id="error"></h3> 
+  
   <dir><br>
 
 
@@ -684,7 +698,7 @@ body {
 <br>
 
 <input type="reset" name="reset" value="Cancel Order" onclick="closeNav4()">
-<input id="PlaceBurgerOrder" onclick="PlaceSoupOrder(); closeNav1()" type="submit" name="send" value="Place Order">
+<input type="submit" name="send" value="Place Order" onclick="closeNav4()">
 </fieldset>
 </form>
 </body>
@@ -769,63 +783,463 @@ function PlaceBurgerOrder() {
   var onions = document.getElementById("onions"); 
   var pickles = document.getElementById("pickles");
 
- if (hamburger.checked == true){  
-    var y = document.getElementById("hamburger").value;  
+ if (hamburger.checked == true){ 
+ if(this.y == null){ 
+    y = document.getElementById("hamburger").value;  
       if (cheese.checked == true & tomato.checked == false & lettuce.checked == false & onions.checked == false & pickles.checked == false){  
-        var y1 = document.getElementById("cheese").value;  
+        y1 = document.getElementById("cheese").value;  
         return (document.getElementById("result").innerHTML = y, 
           document.getElementById("result-1").innerHTML = y1); 
-    } 
-    if (tomato.checked == true & cheese.checked == false & lettuce.checked == false & onions.checked == false & pickles.checked == false){  
-        var y2 = document.getElementById("tomato").value;  
+      }
+    else if (tomato.checked == true & cheese.checked == false & lettuce.checked == false & onions.checked == false & pickles.checked == false){  
+        y2 = document.getElementById("tomato").value;  
         return (document.getElementById("result").innerHTML = y, 
           document.getElementById("result-2").innerHTML = y2); 
     }
-    if (lettuce.checked == true & tomato.checked == false & cheese.checked == false & onions.checked == false & pickles.checked == false){  
-        var y3 = document.getElementById("lettuce").value;  
+    else if (lettuce.checked == true & tomato.checked == false & cheese.checked == false & onions.checked == false & pickles.checked == false){  
+        y3 = document.getElementById("lettuce").value;  
         return (document.getElementById("result").innerHTML = y, 
           document.getElementById("result-3").innerHTML = y3); 
     } 
-    if (onions.checked == true & tomato.checked == false & lettuce.checked == false & cheese.checked == false & pickles.checked == false){  
-        var y4 = document.getElementById("onions").value;  
+    else if (onions.checked == true & tomato.checked == false & lettuce.checked == false & cheese.checked == false & pickles.checked == false){  
+        y4 = document.getElementById("onions").value;  
         return (document.getElementById("result").innerHTML = y, 
           document.getElementById("result-4").innerHTML = y4); 
     }  
-    else if (pickles.checked == true & tomato.checked == false & lettuce.checked == false & onions.checked == false & cheese.checked == false){  
-        var y5 = document.getElementById("pickles").value;  
+    else if (pickles.checked == true & tomato.checked == false & lettuce.checked == false & onions.checked == false & pickles.checked == false){  
+        y5 = document.getElementById("pickles").value;  
         return (document.getElementById("result").innerHTML = y, 
           document.getElementById("result-5").innerHTML = y5); 
     }  
-    ///
-    else if (cheese.checked == true & tomato.checked == true & lettuce.checked == false & onions.checked == false & cheese.checked == false){
-        var y1 = document.getElementById("cheese").value;    
-        var y2 = document.getElementById("tomato").value;  
+    else if (cheese.checked == true & tomato.checked == true & lettuce.checked == false & onions.checked == false & pickles.checked == false){
+        y1 = document.getElementById("cheese").value;    
+        y2 = document.getElementById("tomato").value; 
+        let obj = new Order(y, y1, y2); 
+        return (document.getElementById("result").innerHTML = obj); 
+    }
+    else if (cheese.checked == true & lettuce.checked == true & tomato.checked == false & onions.checked == false & pickles.checked == false){
+        y1 = document.getElementById("cheese").value;    
+        y2 = document.getElementById("lettuce").value;  
         return (document.getElementById("result").innerHTML = y, 
           document.getElementById("result-1").innerHTML = y1,
-          document.getElementById("result-2").innerHTML = y2); 
+          document.getElementById("result-3").innerHTML = y2); 
     }
-    else if (lettuce.checked == true){  
-        var y3 = document.getElementById("lettuce").value;  
+    //
+    else if (cheese.checked == true & onions.checked == true & lettuce.checked == false & tomato.checked == false & pickles.checked == false){  
+        y1 = document.getElementById("cheese").value;    
+        y2 = document.getElementById("onions").value;  
         return (document.getElementById("result").innerHTML = y, 
-          document.getElementById("result-3").innerHTML = y3); 
+          document.getElementById("result-1").innerHTML = y1,
+          document.getElementById("result-4").innerHTML = y2);  
+    }
+    else if (cheese.checked == true & pickles.checked == true & tomato.checked == false & onions.checked == false & lettuce.checked == false){  
+        y1 = document.getElementById("cheese").value;    
+        y2 = document.getElementById("pickles").value;  
+        return (document.getElementById("result").innerHTML = y, 
+          document.getElementById("result-1").innerHTML = y1,
+          document.getElementById("result-5").innerHTML = y2); 
     } 
-    else if (onions.checked == true){  
-        var y4 = document.getElementById("onions").value;  
+    else if (tomato.checked == true & lettuce.checked == true & onions.checked == false & cheese.checked == false & pickles.checked == false){  
+        y1 = document.getElementById("tomato").value;    
+        y2 = document.getElementById("lettuce").value;  
         return (document.getElementById("result").innerHTML = y, 
-          document.getElementById("result-4").innerHTML = y4); 
+          document.getElementById("result-2").innerHTML = y1,
+          document.getElementById("result-3").innerHTML = y2); 
     }  
-    else if (pickles.checked == true){  
-        var y5 = document.getElementById("pickles").value;  
+    else if (tomato.checked == true & onions.checked == true & lettuce.checked == false & cheese.checked == false & pickles.checked == false){  
+        y1 = document.getElementById("tomato").value;    
+        y2 = document.getElementById("onions").value;  
         return (document.getElementById("result").innerHTML = y, 
+          document.getElementById("result-2").innerHTML = y1,
+          document.getElementById("result-4").innerHTML = y2); 
+    }  
+    else if (tomato.checked == true & piclkes.checked == true & lettuce.checked == false & onions.checked == false & cheese.checked == false){
+        y1 = document.getElementById("tomato").value;    
+        y2 = document.getElementById("piclkes").value;  
+        return (document.getElementById("result").innerHTML = y, 
+          document.getElementById("result-2").innerHTML = y1,
+          document.getElementById("result-5").innerHTML = y2); 
+    }
+    else if (cheese.checked == true & tomato.checked == true & lettuce.checked == true & onions.checked == false & pickles.checked == false){
+        y1 = document.getElementById("cheese").value;    
+        y2 = document.getElementById("tomato").value;
+        y3 = document.getElementById("lettuce").value;  
+        return (document.getElementById("result").innerHTML = y, 
+          document.getElementById("result-1").innerHTML = y1,
+          document.getElementById("result-2").innerHTML = y2,
+          document.getElementById("result-3").innerHTML = y3); 
+    }
+        else if (cheese.checked == true & tomato.checked == true & onions.checked == true & lettuce.checked == false & pickles.checked == false){
+        y1 = document.getElementById("cheese").value;    
+        y2 = document.getElementById("tomato").value;
+        y3 = document.getElementById("onions").value;  
+        return (document.getElementById("result").innerHTML = y, 
+          document.getElementById("result-1").innerHTML = y1,
+          document.getElementById("result-2").innerHTML = y2,
+          document.getElementById("result-4").innerHTML = y3); 
+    }
+        else if (cheese.checked == true & tomato.checked == true & pickles.checked == true & onions.checked == false & lettuce.checked == false){
+        y1 = document.getElementById("cheese").value;    
+        y2 = document.getElementById("tomato").value;
+        y3 = document.getElementById("pickles").value;  
+        return (document.getElementById("result").innerHTML = y, 
+          document.getElementById("result-1").innerHTML = y1,
+          document.getElementById("result-2").innerHTML = y2,
+          document.getElementById("result-5").innerHTML = y3); 
+    }
+        else if (cheese.checked == true & onions.checked == true & lettuce.checked == true & tomato.checked == false & pickles.checked == false){
+        y1 = document.getElementById("cheese").value;    
+        y2 = document.getElementById("lettuce").value;
+        y3 = document.getElementById("onions").value;  
+        return (document.getElementById("result").innerHTML = y, 
+          document.getElementById("result-1").innerHTML = y1,
+          document.getElementById("result-3").innerHTML = y2,
+          document.getElementById("result-4").innerHTML = y3); 
+    }
+        else if (cheese.checked == true & pickles.checked == true & lettuce.checked == true & onions.checked == false & tomato.checked == false){
+        y1 = document.getElementById("cheese").value;    
+        y2 = document.getElementById("lettuce").value;
+        y3 = document.getElementById("pickles").value;  
+        return (document.getElementById("result").innerHTML = y, 
+          document.getElementById("result-1").innerHTML = y1,
+          document.getElementById("result-3").innerHTML = y2,
+          document.getElementById("result-5").innerHTML = y3);
+    }
+        else if (cheese.checked == true & pickles.checked == true & onions.checked == true & tomato.checked == false & lettuce.checked == false){
+        y1 = document.getElementById("cheese").value;    
+        y2 = document.getElementById("onions").value;
+        y3 = document.getElementById("pickles").value;  
+        return (document.getElementById("result").innerHTML = y, 
+          document.getElementById("result-1").innerHTML = y1,
+          document.getElementById("result-4").innerHTML = y2,
+          document.getElementById("result-5").innerHTML = y3); 
+    }
+        else if (tomato.checked == true & lettuce.checked == true & onions.checked == true & cheese.checked == false & pickles.checked == false){
+        y1 = document.getElementById("tomato").value;    
+        y2 = document.getElementById("lettuce").value;
+        y3 = document.getElementById("onions").value;  
+        return (document.getElementById("result").innerHTML = y, 
+          document.getElementById("result-2").innerHTML = y1,
+          document.getElementById("result-3").innerHTML = y2,
+          document.getElementById("result-4").innerHTML = y3); 
+    }
+        else if (tomato.checked == true & onions.checked == true & pickles.checked == true & lettuce.checked == false & cheese.checked == false){
+        y1 = document.getElementById("tomato").value;    
+        y2 = document.getElementById("onions").value;
+        y3 = document.getElementById("pickles").value;  
+        return (document.getElementById("result").innerHTML = y, 
+          document.getElementById("result-2").innerHTML = y1,
+          document.getElementById("result-4").innerHTML = y2,
+          document.getElementById("result-5").innerHTML = y3); 
+    }
+    else if (lettuce.checked == true & onions.checked == true & pickles.checked == true & tomato.checked == false & cheese.checked == false){
+        y1 = document.getElementById("lettuce").value;    
+        y2 = document.getElementById("onions").value;
+        y3 = document.getElementById("pickles").value;  
+        return (document.getElementById("result").innerHTML = y, 
+          document.getElementById("result-3").innerHTML = y1,
+          document.getElementById("result-4").innerHTML = y2,
+          document.getElementById("result-5").innerHTML = y3); 
+    }
+    else if (cheese.checked == true & tomato.checked == true & lettuce.checked == true & onions.checked == true & pickles.checked == false){
+        y1 = document.getElementById("cheese").value;    
+        y2 = document.getElementById("tomato").value;
+        y3 = document.getElementById("lettuce").value; 
+        y4 = document.getElementById("onions").value; 
+        return (document.getElementById("result").innerHTML = y, 
+          document.getElementById("result-1").innerHTML = y1,
+          document.getElementById("result-2").innerHTML = y2,
+          document.getElementById("result-3").innerHTML = y3,
+          document.getElementById("result-4").innerHTML = y4);  
+    }
+    else if (cheese.checked == true & tomato.checked == true & lettuce.checked == true & pickles.checked == true & onions.checked == false){
+        y1 = document.getElementById("cheese").value;    
+        y2 = document.getElementById("tomato").value;
+        y3 = document.getElementById("lettuce").value; 
+        y4 = document.getElementById("pickles").value; 
+        return (document.getElementById("result").innerHTML = y, 
+          document.getElementById("result-1").innerHTML = y1,
+          document.getElementById("result-2").innerHTML = y2,
+          document.getElementById("result-3").innerHTML = y3,
+          document.getElementById("result-5").innerHTML = y4);   
+    }
+    else if (cheese.checked == true & tomato.checked == true & onions.checked == true & pickles.checked == true & lettuce.checked == false){
+        y1 = document.getElementById("cheese").value;    
+        y2 = document.getElementById("tomato").value;
+        y3 = document.getElementById("onions").value; 
+        y4 = document.getElementById("pickles").value; 
+        return (document.getElementById("result").innerHTML = y, 
+          document.getElementById("result-1").innerHTML = y1,
+          document.getElementById("result-2").innerHTML = y2,
+          document.getElementById("result-4").innerHTML = y3,
+          document.getElementById("result-5").innerHTML = y4); 
+    }
+    else if (cheese.checked == true & lettuce.checked == true & onions.checked == true & pickles.checked == true & tomato.checked == false){
+        y1 = document.getElementById("cheese").value;    
+        y2 = document.getElementById("lettuce").value;
+        y3 = document.getElementById("onions").value; 
+        y4 = document.getElementById("pickles").value; 
+        return (document.getElementById("result").innerHTML = y, 
+          document.getElementById("result-1").innerHTML = y1,
+          document.getElementById("result-3").innerHTML = y2,
+          document.getElementById("result-4").innerHTML = y3,
+          document.getElementById("result-5").innerHTML = y4); 
+    }
+    else if (tomato.checked == true & lettuce.checked == true & onions.checked == true & pickles.checked == true & cheese.checked == false){
+        y1 = document.getElementById("tomato").value;    
+        y2 = document.getElementById("lettuce").value;
+        y3 = document.getElementById("onions").value; 
+        y4 = document.getElementById("pickles").value; 
+        return (document.getElementById("result").innerHTML = y, 
+          document.getElementById("result-2").innerHTML = y1,
+          document.getElementById("result-3").innerHTML = y2,
+          document.getElementById("result-4").innerHTML = y3,
+          document.getElementById("result-5").innerHTML = y4); 
+    }
+    else if (cheese.checked == true & tomato.checked == true & lettuce.checked == true & onions.checked == true & pickles.checked == true){
+        y1 = document.getElementById("cheese").value;    
+        y2 = document.getElementById("tomato").value;
+        y3 = document.getElementById("lettuce").value; 
+        y4 = document.getElementById("onions").value; 
+        y5 = document.getElementById("pickles").value; 
+        return (document.getElementById("result").innerHTML = y, 
+          document.getElementById("result-1").innerHTML = y1,
+          document.getElementById("result-2").innerHTML = y2,
+          document.getElementById("result-3").innerHTML = y3,
+          document.getElementById("result-4").innerHTML = y4,
           document.getElementById("result-5").innerHTML = y5); 
-    }  
-    else if (pickles.checked == true){  
-        var y5 = document.getElementById("pickles").value;  
-        return (document.getElementById("result").innerHTML = y, 
-          document.getElementById("result-5").innerHTML = y5); 
-    }  
+    }
     return document.getElementById("result").innerHTML = y;
   }
+   else if(this.ym == null){ 
+    alert("nice");
+    ym = document.getElementById("hamburger").value;  
+      if (cheese.checked == true & tomato.checked == false & lettuce.checked == false & onions.checked == false & pickles.checked == false){  
+        ym1 = document.getElementById("cheese").value;  
+        return (document.getElementById("newresult").innerHTML = ym, 
+          document.getElementById("newresult-1").innerHTML = ym1); 
+      }
+    else if (tomato.checked == true & cheese.checked == false & lettuce.checked == false & onions.checked == false & pickles.checked == false){  
+        ym2 = document.getElementById("tomato").value;  
+        return (document.getElementById("newresult").innerHTML = ym, 
+          document.getElementById("newresult-2").innerHTML = ym2); 
+    }
+    else if (lettuce.checked == true & tomato.checked == false & cheese.checked == false & onions.checked == false & pickles.checked == false){  
+        ym3 = document.getElementById("lettuce").value;  
+        return (document.getElementById("newresult").innerHTML = ym, 
+          document.getElementById("newresult-3").innerHTML = ym3); 
+    } 
+    else if (onions.checked == true & tomato.checked == false & lettuce.checked == false & cheese.checked == false & pickles.checked == false){  
+        ym4 = document.getElementById("onions").value;  
+        return (document.getElementById("newresult").innerHTML = ym, 
+          document.getElementById("newresult-4").innerHTML = ym4); 
+    }  
+    else if (pickles.checked == true & tomato.checked == false & lettuce.checked == false & onions.checked == false & pickles.checked == false){  
+        ym5 = document.getElementById("pickles").value;  
+        return (document.getElementById("newresult").innerHTML = ym, 
+          document.getElementById("newresult-5").innerHTML = ym5); 
+    }  
+    else if (cheese.checked == true & tomato.checked == true & lettuce.checked == false & onions.checked == false & pickles.checked == false){
+        ym1 = document.getElementById("cheese").value;    
+        ym2 = document.getElementById("tomato").value; 
+        let obj = new Order(y, y1, y2); 
+        return (document.getElementById("result").innerHTML = obj); 
+    }
+    else if (cheese.checked == true & lettuce.checked == true & tomato.checked == false & onions.checked == false & pickles.checked == false){
+        ym1 = document.getElementById("cheese").value;    
+        ym2 = document.getElementById("lettuce").value;  
+        return (document.getElementById("newresult").innerHTML = ym, 
+          document.getElementById("newresult-1").innerHTML = ym1,
+          document.getElementById("newresult-3").innerHTML = ym2); 
+    }
+    //
+    else if (cheese.checked == true & onions.checked == true & lettuce.checked == false & tomato.checked == false & pickles.checked == false){  
+        ym1 = document.getElementById("cheese").value;    
+        ym2 = document.getElementById("onions").value;  
+        return (document.getElementById("newresult").innerHTML = ym, 
+          document.getElementById("newresult-1").innerHTML = ym1,
+          document.getElementById("newresult-4").innerHTML = ym2);  
+    }
+    else if (cheese.checked == true & pickles.checked == true & tomato.checked == false & onions.checked == false & lettuce.checked == false){  
+        ym1 = document.getElementById("cheese").value;    
+        ym2 = document.getElementById("pickles").value;  
+        return (document.getElementById("newresult").innerHTML = ym, 
+          document.getElementById("newresult-1").innerHTML = ym1,
+          document.getElementById("newresult-5").innerHTML = ym2); 
+    } 
+    else if (tomato.checked == true & lettuce.checked == true & onions.checked == false & cheese.checked == false & pickles.checked == false){  
+        ym1 = document.getElementById("tomato").value;    
+        ym2 = document.getElementById("lettuce").value;  
+        return (document.getElementById("newresult").innerHTML = ym, 
+          document.getElementById("newresult-2").innerHTML = ym1,
+          document.getElementById("newresult-3").innerHTML = ym2); 
+    }  
+    else if (tomato.checked == true & onions.checked == true & lettuce.checked == false & cheese.checked == false & pickles.checked == false){  
+        ym1 = document.getElementById("tomato").value;    
+        ym2 = document.getElementById("onions").value;  
+        return (document.getElementById("newresult").innerHTML = ym, 
+          document.getElementById("newresult-2").innerHTML = ym1,
+          document.getElementById("newresult-4").innerHTML = ym2); 
+    }  
+    else if (tomato.checked == true & piclkes.checked == true & lettuce.checked == false & onions.checked == false & cheese.checked == false){
+        ym1 = document.getElementById("tomato").value;    
+        ym2 = document.getElementById("piclkes").value;  
+        return (document.getElementById("newresult").innerHTML = ym, 
+          document.getElementById("newresult-2").innerHTML = ym1,
+          document.getElementById("newresult-5").innerHTML = ym2); 
+    }
+    else if (cheese.checked == true & tomato.checked == true & lettuce.checked == true & onions.checked == false & pickles.checked == false){
+        ym1 = document.getElementById("cheese").value;    
+        ym2 = document.getElementById("tomato").value;
+        ym3 = document.getElementById("lettuce").value;  
+        return (document.getElementById("newresult").innerHTML = ym, 
+          document.getElementById("newresult-1").innerHTML = ym1,
+          document.getElementById("newresult-2").innerHTML = ym2,
+          document.getElementById("newresult-3").innerHTML = ym3); 
+    }
+        else if (cheese.checked == true & tomato.checked == true & onions.checked == true & lettuce.checked == false & pickles.checked == false){
+        ym1 = document.getElementById("cheese").value;    
+        ym2 = document.getElementById("tomato").value;
+        ym3 = document.getElementById("onions").value;  
+        return (document.getElementById("newresult").innerHTML = ym, 
+          document.getElementById("newresult-1").innerHTML = ym1,
+          document.getElementById("newresultnewresult-2").innerHTML = ym2,
+          document.getElementById("newresult-4").innerHTML = m3); 
+    }
+        else if (cheese.checked == true & tomato.checked == true & pickles.checked == true & onions.checked == false & lettuce.checked == false){
+        ym1 = document.getElementById("cheese").value;    
+        ym2 = document.getElementById("tomato").value;
+        ym3 = document.getElementById("pickles").value;  
+        return (document.getElementById("newresult").innerHTML = ym, 
+          document.getElementById("newresult-1").innerHTML = ym1,
+          document.getElementById("newresult-2").innerHTML = ym2,
+          document.getElementById("newresult-5").innerHTML = ym3); 
+    }
+        else if (cheese.checked == true & onions.checked == true & lettuce.checked == true & tomato.checked == false & pickles.checked == false){
+        ym1 = document.getElementById("cheese").value;    
+        ym2 = document.getElementById("lettuce").value;
+        ym3 = document.getElementById("onions").value;  
+        return (document.getElementById("newresult").innerHTML = ym, 
+          document.getElementById("newresult-1").innerHTML = ym1,
+          document.getElementById("newresult-3").innerHTML = ym2,
+          document.getElementById("newresult-4").innerHTML = ym3); 
+    }
+        else if (cheese.checked == true & pickles.checked == true & lettuce.checked == true & onions.checked == false & tomato.checked == false){
+        ym1 = document.getElementById("cheese").value;    
+        ym2 = document.getElementById("lettuce").value;
+        ym3 = document.getElementById("pickles").value;  
+        return (document.getElementById("newresult").innerHTML = ym, 
+          document.getElementById("newresult-1").innerHTML = ym1,
+          document.getElementById("newresult-3").innerHTML = ym2,
+          document.getElementById("newresult-5").innerHTML = ym3);
+    }
+        else if (cheese.checked == true & pickles.checked == true & onions.checked == true & tomato.checked == false & lettuce.checked == false){
+        ym1 = document.getElementById("cheese").value;    
+        ym2 = document.getElementById("onions").value;
+        ym3 = document.getElementById("pickles").value;  
+        return (document.getElementById("newresult").innerHTML = ym, 
+          document.getElementById("newresult-1").innerHTML = ym1,
+          document.getElementById("newresult-4").innerHTML = ym2,
+          document.getElementById("newresult-5").innerHTML = ym3); 
+    }
+        else if (tomato.checked == true & lettuce.checked == true & onions.checked == true & cheese.checked == false & pickles.checked == false){
+        ym1 = document.getElementById("tomato").value;    
+        ym2 = document.getElementById("lettuce").value;
+        ym3 = document.getElementById("onions").value;  
+        return (document.getElementById("newresult").innerHTML = ym, 
+          document.getElementById("newresult-2").innerHTML = ym1,
+          document.getElementById("newresult-3").innerHTML = ym2,
+          document.getElementById("newresult-4").innerHTML = ym3); 
+    }
+        else if (tomato.checked == true & onions.checked == true & pickles.checked == true & lettuce.checked == false & cheese.checked == false){
+        ym1 = document.getElementById("tomato").value;    
+        ym2 = document.getElementById("onions").value;
+        ym3 = document.getElementById("pickles").value;  
+        return (document.getElementById("newresult").innerHTML = ym, 
+          document.getElementById("newresult-2").innerHTML = ym1,
+          document.getElementById("newresult-4").innerHTML = ym2,
+          document.getElementById("newresult-5").innerHTML = ym3); 
+    }
+    else if (lettuce.checked == true & onions.checked == true & pickles.checked == true & tomato.checked == false & cheese.checked == false){
+        ym1 = document.getElementById("lettuce").value;    
+        ym2 = document.getElementById("onions").value;
+        ym3 = document.getElementById("pickles").value;  
+        return (document.getElementById("newresult").innerHTML = ym, 
+          document.getElementById("newresult-3").innerHTML = ym1,
+          document.getElementById("newresult-4").innerHTML = ym2,
+          document.getElementById("newresult-5").innerHTML = ym3); 
+    }
+    else if (cheese.checked == true & tomato.checked == true & lettuce.checked == true & onions.checked == true & pickles.checked == false){
+        ym1 = document.getElementById("cheese").value;    
+        ym2 = document.getElementById("tomato").value;
+        ym3 = document.getElementById("lettuce").value; 
+        ym4 = document.getElementById("onions").value; 
+        return (document.getElementById("newresult").innerHTML = ym, 
+          document.getElementById("newresult-1").innerHTML = ym1,
+          document.getElementById("newresult-2").innerHTML = ym2,
+          document.getElementById("newresult-3").innerHTML = ym3,
+          document.getElementById("newresult-4").innerHTML = ym4);  
+    }
+    else if (cheese.checked == true & tomato.checked == true & lettuce.checked == true & pickles.checked == true & onions.checked == false){
+        ym1 = document.getElementById("cheese").value;    
+        ym2 = document.getElementById("tomato").value;
+        ym3 = document.getElementById("lettuce").value; 
+        ym4 = document.getElementById("pickles").value; 
+        return (document.getElementById("newresult").innerHTML = ym, 
+          document.getElementById("newresult-1").innerHTML = ym1,
+          document.getElementById("newresult-2").innerHTML = ym2,
+          document.getElementById("newresult-3").innerHTML = ym3,
+          document.getElementById("newresult-5").innerHTML = ym4);   
+    }
+    else if (cheese.checked == true & tomato.checked == true & onions.checked == true & pickles.checked == true & lettuce.checked == false){
+        ym1 = document.getElementById("cheese").value;    
+        ym2 = document.getElementById("tomato").value;
+        ym3 = document.getElementById("onions").value; 
+        ym4 = document.getElementById("pickles").value; 
+        return (document.getElementById("newresult").innerHTML = ym, 
+          document.getElementById("newresult-1").innerHTML = ym1,
+          document.getElementById("newresult-2").innerHTML = ym2,
+          document.getElementById("newresult-4").innerHTML = ym3,
+          document.getElementById("newresult-5").innerHTML = ym4); 
+    }
+    else if (cheese.checked == true & lettuce.checked == true & onions.checked == true & pickles.checked == true & tomato.checked == false){
+        ym1 = document.getElementById("cheese").value;    
+        ym2 = document.getElementById("lettuce").value;
+        ym3 = document.getElementById("onions").value; 
+        ym4 = document.getElementById("pickles").value; 
+        return (document.getElementById("newresult").innerHTML = ym, 
+          document.getElementById("newresult-1").innerHTML = ym1,
+          document.getElementById("newresult-3").innerHTML = ym2,
+          document.getElementById("newresult-4").innerHTML = ym3,
+          document.getElementById("newresult-5").innerHTML = ym4); 
+    }
+    else if (tomato.checked == true & lettuce.checked == true & onions.checked == true & pickles.checked == true & cheese.checked == false){
+        ym1 = document.getElementById("tomato").value;    
+        ym2 = document.getElementById("lettuce").value;
+        ym3 = document.getElementById("onions").value; 
+        ym4 = document.getElementById("pickles").value; 
+        return (document.getElementById("newresult").innerHTML = ym, 
+          document.getElementById("newresult-2").innerHTML = ym1,
+          document.getElementById("newresult-3").innerHTML = ym2,
+          document.getElementById("newresult-4").innerHTML = ym3,
+          document.getElementById("newresult-5").innerHTML = ym4); 
+    }
+    else if (cheese.checked == true & tomato.checked == true & lettuce.checked == true & onions.checked == true & pickles.checked == true){
+        ym1 = document.getElementById("cheese").value;    
+        ym2 = document.getElementById("tomato").value;
+        ym3 = document.getElementById("lettuce").value; 
+        ym4 = document.getElementById("onions").value; 
+        ym5 = document.getElementById("pickles").value; 
+        return (document.getElementById("newresult").innerHTML = ym, 
+          document.getElementById("newresult-1").innerHTML = ym1,
+          document.getElementById("newresult-2").innerHTML = ym2,
+          document.getElementById("newresult-3").innerHTML = ym3,
+          document.getElementById("newresult-4").innerHTML = ym4,
+          document.getElementById("newresult-5").innerHTML = ym5); 
+    }
+    return document.getElementById("newresult").innerHTML = ym;
+  }
+}
  if (baconClubHouse.checked == true){  
     var x = document.getElementById("bacon-clubhouse").value;  
     return document.getElementById("result2").innerHTML = x; 
@@ -846,113 +1260,10 @@ function PlaceBurgerOrder() {
         var q = document.getElementById("cheese").value;  
         return document.getElementById("result6").innerHTML = q; 
   } */ 
-}  
-</script>
-    
-<script>
-function PlacePizzaOrder() {
-  var cheese = document.getElementById("cheese");
-  var pepperoni = document.getElementById("pepperoni");  
-  var deluxe = document.getElementById("deluxe");  
-  var meatdeluxe = document.getElementById("meat-deluxe"); 
-  var hawaiian = document.getElementById("hawaiian"); 
-  var ranch = document.getElementById("ranch");  
-  var garlic = document.getElementById("garlic");
-  var cheesejalapeno = document.getElementById("cheese-jalapeno");
 
- if (cheese.checked == true){  
-    var y = document.getElementById("cheese").value;  
-    return document.getElementById("result").innerHTML = y; 
-  }
- if (pepperoni.checked == true){  
-    var y = document.getElementById("pepperoni").value;  
-    return document.getElementById("result").innerHTML = y; 
-  }
-if (deluxe.checked == true){  
-    var y = document.getElementById("deluxe").value;  
-    return document.getElementById("result").innerHTML = y; 
-  }
-if (meatdeluxe.checked == true){  
-    var y = document.getElementById("meat-deluxe").value;  
-    return document.getElementById("result").innerHTML = y; 
-  }
-  if (hawaiian.checked == true){  
-    var y = document.getElementById("hawaiian").value;  
-    return document.getElementById("result").innerHTML = y; 
-  }
-  if (ranch.checked == true){  
-    return document.getElementById("error").innerHTML = "Please mark only one checkbox either Yes or No";  
-  }  
-  else if (ranch.checked == true){  
-    var y = document.getElementById("ranch").value; 
-    console.log("ranch"); 
-    alert("bad create");
-    //return document.getElementById("result").innerHTML = y;   
-  }   
-  else if (garlic.checked == true){  
-    var n = document.getElementById("garlic").value;  
-    console.log("garlic");
-    //return document.getElementById("result").innerHTML = n;  
-  }  
-   else if (cheesejalapeno.checked == true){  
-    var n = document.getElementById("cheesejalapeno").value;  
-    console.log("cheesejalapeno");
-    //return document.getElementById("result").innerHTML = n;  
-  }  
-  else {  
-    return document.getElementById("error").innerHTML = "*Please mark any of checkbox";  
-  }  
 }  
 </script>
 
-<script>
-function PlaceSoupOrder() {
-  var creamychicken = document.getElementById("creamy-chicken");
-  var creamymushroom = document.getElementById("creamy-mushroom");  
-  var clearchicken = document.getElementById("clear-chicken");  
-  var classiccrackers = document.getElementById("classic-crackers"); 
-  var veggiecrackers = document.getElementById("veggie-crackers"); 
-  var cheesecrackers = document.getElementById("cheese-crackers");  
-
- if (creamychicken.checked == true){  
-    var y = document.getElementById("creamy-chicken").value;  
-    return document.getElementById("result").innerHTML = y; 
-  }
- if (creamymushroom.checked == true){  
-    var y = document.getElementById("creamy-mushroom").value;  
-    return document.getElementById("result").innerHTML = y; 
-  }
-if (clearchicken.checked == true){  
-    var y = document.getElementById("clear-chicken").value;  
-    return document.getElementById("result").innerHTML = y; 
-  }
-  if (classiccrackers.checked == true){  
-    return document.getElementById("error").innerHTML = "Please mark only one checkbox either Yes or No";  
-  }  
-  else if (classiccrackers.checked == true){  
-    var y = document.getElementById("classic-crackers").value; 
-    console.log("classic-crackers"); 
-    alert("bad create");
-    //return document.getElementById("result").innerHTML = y;   
-  }   
-  else if (veggiecrackers.checked == true){  
-    var n = document.getElementById("veggie-crackers").value;  
-    console.log("veggie-crackers");
-    //return document.getElementById("result").innerHTML = n;  
-  }  
-   else if (cheesecrackers.checked == true){  
-    var n = document.getElementById("cheese-crackers").value;  
-    console.log("cheese-crackers");
-    //return document.getElementById("result").innerHTML = n;  
-  }  
-  else {  
-    return document.getElementById("error").innerHTML = "*Please mark any of checkbox";  
-  }  
-}  
-</script>
-
-<script>
-  </script>
 <script>
 function openNav5() {
   document.getElementById("myNav5").style.width = "100%";
@@ -1006,5 +1317,7 @@ function closeNav1() {
 </script>
 </body>
 </html>
+
+
 
 
