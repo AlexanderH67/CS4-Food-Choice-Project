@@ -1264,6 +1264,185 @@ function PlaceBurgerOrder() {
 }  
 </script>
 
+    <script>
+  
+function PlacePizzaOrder() {
+  var cheese = document.getElementById("cheese");
+  var pepperoni = document.getElementById("pepperoni");  
+  var deluxe = document.getElementById("deluxe");  
+  var meatdeluxe = document.getElementById("meatdeluxe"); 
+  var hawaiian = document.getElementById("hawaiian"); 
+  var ranch = document.getElementById("ranch");  
+  var garlic = document.getElementById("garlic");
+  var jalapeño = document.getElementById("jalapeño"); 
+  
+
+ if (cheese.checked == true){ 
+ if(this.yl == null){ 
+    yl = document.getElementById("cheese").value;  
+      if (ranch.checked == true & garlic.checked == false & jalapeño.checked == false){  
+        yl1 = document.getElementById("ranch").value;  
+        return (document.getElementById("result").innerHTML = yl, 
+          document.getElementById("result-1").innerHTML = yl1); 
+      }
+    else if (garlic.checked == true & jalapeño.checked == false & ranch.checked == false){  
+        yl2 = document.getElementById("garlic").value;  
+        return (document.getElementById("result").innerHTML = yl, 
+          document.getElementById("result-2").innerHTML = yl2); 
+    }
+    else if (jalapeño.checked == true & ranch.checked == false & garlic.checked == false){  
+        yl3 = document.getElementById("jalapeño").value;  
+        return (document.getElementById("result").innerHTML = yl, 
+          document.getElementById("result-3").innerHTML = yl3); 
+    } 
+    else if (ranch.checked == true & garlic.checked == true & jalapeño.checked == false){
+        yl1 = document.getElementById("ranch").value;    
+        yl2 = document.getElementById("garlic").value; 
+        let obj = new Order(yl, yl1, yl2); 
+        return (document.getElementById("result").innerHTML = obj); 
+    }
+    else if (ranch.checked == true & jalapeño.checked == true & garlic.checked == false){
+        yl1 = document.getElementById("ranch").value;    
+        yl2 = document.getElementById("jalapeño").value;  
+        return (document.getElementById("result").innerHTML = yl, 
+          document.getElementById("result-1").innerHTML = yl1,
+          document.getElementById("result-3").innerHTML = yl2); 
+    }
+    else if (garlic.checked == true & jalapeño.checked == true & ranch.checked == false){  
+        yl1 = document.getElementById("garlic").value;    
+        yl2 = document.getElementById("jalapeño").value;  
+        return (document.getElementById("result").innerHTML = yl, 
+          document.getElementById("result-2").innerHTML = yl1,
+          document.getElementById("result-3").innerHTML = yl2); 
+    }  
+    else if (garlic.checked == true & ranch.checked == true & jalapeño.checked == false){  
+        yl1 = document.getElementById("garlic").value;    
+        yl2 = document.getElementById("ranch").value;  
+        return (document.getElementById("result").innerHTML = yl, 
+          document.getElementById("result-2").innerHTML = yl1,
+          document.getElementById("result-4").innerHTML = yl2); 
+    }  
+    else if (jalapeño.checked == true & ranch.checked == true & garlic.checked == false){
+        yl1 = document.getElementById("jalapeño").value;    
+        yl2 = document.getElementById("ranch").value;  
+        return (document.getElementById("result").innerHTML = yl, 
+          document.getElementById("result-2").innerHTML = yl1,
+          document.getElementById("result-5").innerHTML = yl2); 
+    }
+     else if (jalapeño.checked == true & garlic.checked == true & ranch.checked == false){
+        yl1 = document.getElementById("jalapeño").value;    
+        yl2 = document.getElementById("garlic").value;  
+        return (document.getElementById("result").innerHTML = yl, 
+          document.getElementById("result-2").innerHTML = yl1,
+          document.getElementById("result-6").innerHTML = yl2); 
+    }
+   
+    else if (ranch.checked == true & garlic.checked == true & jalapeño.checked == true){
+        yl1 = document.getElementById("ranch").value;    
+        yl2 = document.getElementById("garlic").value;
+        yl3 = document.getElementById("jalapeño").value;  
+        return (document.getElementById("result").innerHTML = yl, 
+          document.getElementById("result-1").innerHTML = yl1,
+          document.getElementById("result-2").innerHTML = yl2,
+          document.getElementById("result-3").innerHTML = yl3,
+          document.getElementById("result-4").innerHTML = yl4,
+          document.getElementById("result-5").innerHTML = yl5); 
+    }
+    return document.getElementById("result").innerHTML = yl;
+  }
+   else if(this.ylm == null){ 
+    alert("nice");
+    ylm = document.getElementById("cheese").value;  
+      if (ranch.checked == true & garlic.checked == false & jalapeño.checked == false){  
+        ym1 = document.getElementById("ranch").value;  
+        return (document.getElementById("newresult").innerHTML = ylm, 
+          document.getElementById("newresult-1").innerHTML = ylm1); 
+      }
+    else if (garlic.checked == true & jalapeño.checked == false & ranch.checked == false){  
+        ylm2 = document.getElementById("garlic").value;  
+        return (document.getElementById("newresult").innerHTML = ylm, 
+          document.getElementById("newresult-2").innerHTML = ylm2); 
+    }
+    else if (jalapeño.checked == true & ranch.checked == false & garlic.checked == false){  
+        ylm3 = document.getElementById("jalapeño").value;  
+        return (document.getElementById("newresult").innerHTML = ylm, 
+          document.getElementById("newresult-3").innerHTML = ylm3); 
+    } 
+    else if (ranch.checked == true & garlic.checked == true & jalapeño.checked == false){
+        ylm1 = document.getElementById("ranch").value;    
+        ylm2 = document.getElementById("garlic").value; 
+        let obj = new Order(yl, yl1, yl2); 
+        return (document.getElementById("result").innerHTML = obj); 
+    }
+    else if (ranch.checked == true & jalapeño.checked == true & garlic.checked == false){
+        ylm1 = document.getElementById("ranch").value;    
+        ylm2 = document.getElementById("jalapeño").value;  
+        return (document.getElementById("newresult").innerHTML = ylm, 
+          document.getElementById("newresult-1").innerHTML = ylm1,
+          document.getElementById("newresult-3").innerHTML = ylm2); 
+    }
+    //
+    else if (garlic.checked == true & jalapeño.checked == true & ranch.checked == false){  
+        ylm1 = document.getElementById("garlic").value;    
+        ylm2 = document.getElementById("jalapeño").value;  
+        return (document.getElementById("newresult").innerHTML = ylm, 
+          document.getElementById("newresult-1").innerHTML = ylm1,
+          document.getElementById("newresult-4").innerHTML = ylm2);  
+    }
+    else if (garlic.checked == true & ranch.checked == true & jalapeño.checked == false){  
+        ylm1 = document.getElementById("garlic").value;    
+        ylm2 = document.getElementById("ranch").value;  
+        return (document.getElementById("newresult").innerHTML = ylm, 
+          document.getElementById("newresult-1").innerHTML = ylm1,
+          document.getElementById("newresult-5").innerHTML = ylm2); 
+    } 
+    else if (jalapeño.checked == true & ranch.checked == true & garlic.checked == false){  
+        ylm1 = document.getElementById("tomato").value;    
+        ylm2 = document.getElementById("lettuce").value;  
+        return (document.getElementById("newresult").innerHTML = ylm, 
+          document.getElementById("newresult-2").innerHTML = ylm1,
+          document.getElementById("newresult-3").innerHTML = ylm2); 
+    }  
+    else if (jalapeño.checked == true & garlic.checked == true & ranch.checked == false){  
+        ylm1 = document.getElementById("jalapeño").value;    
+        ylm2 = document.getElementById("garlic").value;  
+        return (document.getElementById("newresult").innerHTML = ylm,  
+          document.getElementById("newresult-2").innerHTML = ylm1,
+          document.getElementById("newresult-4").innerHTML = ylm2); 
+    }  
+    else if (ranch.checked == true & garlic.checked == true & jalapeño.checked == true){
+        ylm1 = document.getElementById("ranch").value;    
+        ylm2 = document.getElementById("garlic").value;
+        ylm3 = document.getElementById("jalapeño").value; 
+        return (document.getElementById("newresult").innerHTML = ylm, 
+          document.getElementById("newresult-1").innerHTML = ylm1,
+          document.getElementById("newresult-2").innerHTML = ylm2,
+          document.getElementById("newresult-3").innerHTML = ylm3,
+          document.getElementById("newresult-4").innerHTML = ylm4,
+          document.getElementById("newresult-5").innerHTML = ylm5); 
+    }
+    return document.getElementById("newresult").innerHTML = ylm;
+  }
+}
+ if (pepperoni.checked == true){  
+    var x = document.getElementById("pepperoni").value;  
+    return document.getElementById("result2").innerHTML = x; 
+  }
+  if (deluxe.checked == true){  
+    var s = document.getElementById("deluxe").value;  
+    return document.getElementById("result3").innerHTML = s; 
+  }
+  if (meatdeluxe.checked == true){  
+    var e = document.getElementById("meatdeluxe").value;  
+    return document.getElementById("result4").innerHTML = e; 
+  }
+ if (hawaiian.checked == true){  
+    var d = document.getElementById("hawaiian").value;  
+    return document.getElementById("result5").innerHTML = d; 
+  }
+}  
+</script>
+    
 <script>
 function openNav5() {
   document.getElementById("myNav5").style.width = "100%";
