@@ -771,6 +771,300 @@ body {
 
 <script>
   TotalRows = 3;
+function PlaceSoupOrder()
+  {
+    //Main Food items
+    var creamyChickenSoup = document.getElementById("creamy-chicken");
+    var CreamyMushroomSoup = document.getElementById("creamy-mushroom");
+    var ClearChickenSoup = document.getElementById("clear-chicken");
+    //side Orders
+    var classicCrackers = document.getElementById("classic-crackers");
+    var veggieCrackers = document.getElementById("veggie-crackers");
+    var CheeseCrackers = document.getElementById("cheese-crackers");
+    ////////// one order
+    if(creamyChickenSoup.checked == true)
+    {
+      if (this.x == null) {
+
+      var x = document.getElementById("creamy-chicken");
+      if(classicCrackers.checked == true & veggieCrackers.checked == false & CheeseCrackers.checked == false)
+      {
+        var x1 = document.getElementById("classic-crackers").value;
+        return(document.getElementById("result").innerHTML = x, document.getElementById("result-1").innerHTML = x1);
+      }
+      else if(classicCrackers.checked == false & veggieCrackers.checked == true & CheeseCrackers.checked == false)
+      {
+        var x2 = document.getElementById("veggie-crackers").value;
+        return(document.getElementById("result").innerHTML = x, document.getElementById("result-2").innerHTML = x2);
+      }
+      else if(classicCrackers.checked == false & veggieCrackers.checked == false & CheeseCrackers.checked == true)
+      {
+          var x3 = document.getElementById("cheese-crackers").value
+          return(document.getElementById("result").inner = x, document.getElementById("result-3").innerHTML = x3);
+      }
+      /////////////////////////////////// With more side Orders
+      else if(classicCrackers.checked == true & veggieCrackers.checked == true & CheeseCrackers.checked == false)
+      {
+        var x1 = document.getElementById("classic-crackers").value;    
+        var x2 = document.getElementById("veggie-crackers").value;
+        let obj = new Order(x, x1, x2);
+        return(document.getElementById("result").innerHTML = obj);////////////////////////
+      }
+      else if(classicCrackers.checked == true & veggieCrackers.checked == false & CheeseCrackers.checked == true)
+      {
+        var x3 = document.getElementById("classic-crackers").value;    
+        var x4 = document.getElementById("cheese-crackers").value;
+        return(document.getElementById("result").innerHTML = x, document.getElementById("result-1").innerHTML = x3, document.getElementById("result-2").innerHTML = x4);
+      }
+      else if(classicCrackers.checked == false & veggieCrackers.checked == true & CheeseCrackers.checked == true)
+      {
+        var x5 = document.getElementById("veggie-crackers").value;    
+        var x6 = document.getElementById("cheese-crackers").value;
+        return(document.getElementById("result").innerHTML = x, document.getElementById("result-1").innerHTML = x5, document.getElementById("result-2").innerHTML = x6);
+      }
+      else if(classicCrackers.checked == true & veggieCrackers.checked == true & CheeseCrackers.checked == true)
+      {
+        var x7 = document.getElementById("classic-crackers").value
+        var x8 = document.getElementById("veggie-crackers").value;    
+        var x9 = document.getElementById("cheese-crackers").value;
+        return(document.getElementById("soupresult").innerHTML = x, document.getElementById("result-1").innerHTML = x7, document.getElementById("result-2").innerHTML = x8, document.getElementById("result-3").innerHTML = x9);
+      }
+    }
+      if (this.xm == null) {
+
+      var xm = document.getElementById("creamy-chicken");
+      if(classicCrackers.checked == true & veggieCrackers.checked == false & CheeseCrackers.checked == false)
+      {
+        var xm1 = document.getElementById("classic-crackers").value;
+        return(document.getElementById("new_result").innerHTML = xm, document.getElementById("new_result-1").innerHTML = xm1);
+      }
+      else if(classicCrackers.checked == false & veggieCrackers.checked == true & CheeseCrackers.checked == false)
+      {
+        var xm2 = document.getElementById("veggie-crackers").value;
+        return(document.getElementById("new_resultsoup").innerHTML = xm, document.getElementById("new_result-2").innerHTML = xm2);
+      }
+      else if(classicCrackers.checked == false & veggieCrackers.checked == false & CheeseCrackers.checked == true)
+      {
+          var xm3 = document.getElementById("cheese-crackers").value
+          return(document.getElementById("new_result").inner = xm, document.getElementById("new_result-3").innerHTML = xm3);
+      }
+      /////////////////////////////////// With more side Orders
+      else if(classicCrackers.checked == true & veggieCrackers.checked == true & CheeseCrackers.checked == false)
+      {
+        var xm1 = document.getElementById("classic-crackers").value;    
+        var xm2 = document.getElementById("veggie-crackers").value;
+        return(document.getElementById("new_result").innerHTML = xm, document.getElementById("new_result-1").innerHTML = xm1, document.getElementById("new_result-2").innerHTML = xm2);
+      }
+      else if(classicCrackers.checked == true & veggieCrackers.checked == false & CheeseCrackers.checked == true)
+      {
+        var xm3 = document.getElementById("classic-crackers").value;    
+        var xm4 = document.getElementById("cheese-crackers").value;
+        return(document.getElementById("new_result").innerHTML = xm, document.getElementById("new_result-1").innerHTML = xm3, document.getElementById("new_result-2").innerHTML = xm4);
+      }
+      else if(classicCrackers.checked == false & veggieCrackers.checked == true & CheeseCrackers.checked == true)
+      {
+        var xm5 = document.getElementById("veggie-crackers").value;    
+        var xm6 = document.getElementById("cheese-crackers").value;
+        return(document.getElementById("result").innerHTML = xm, document.getElementById("new_result-1").innerHTML = xm5, document.getElementById("new_result-2").innerHTML = xm6);
+      }
+      else if(classicCrackers.checked == true & veggieCrackers.checked == true & CheeseCrackers.checked == true)
+      {
+        var xm7 = document.getElementById("classic-crackers").value
+        var xm8 = document.getElementById("veggie-crackers").value;    
+        var xm9 = document.getElementById("cheese-crackers").value;
+        return(document.getElementById("new_result").innerHTML = xm, document.getElementById("result-1").innerHTML = xm7, document.getElementById("new_result-2").innerHTML = xm8, document.getElementById("new_result-3").innerHTML = xm9);
+      }
+    }////////////////////////////////
+    }
+    else if(CreamyMushroomSoup.checked == true)
+    {
+      if(this.x == null)
+      {
+        var x = document.getElementById("creamy-chicken");
+      if(classicCrackers.checked == true & veggieCrackers.checked == false & CheeseCrackers.checked == false)
+      {
+        var x1 = document.getElementById("classic-crackers").value;
+        return(document.getElementById("result").innerHTML = x, document.getElementById("result-1").innerHTML = x1);
+      }
+      else if(classicCrackers.checked == false & veggieCrackers.checked == true & CheeseCrackers.checked == false)
+      {
+        var x2 = document.getElementById("veggie-crackers").value;
+          return(document.getElementById("result").innerHTML = x, document.getElementById("result-2").innerHTML = x2);
+      }
+      else if(classicCrackers.checked == false & veggieCrackers.checked == false & CheeseCrackers.checked == true)
+      {
+        var x3 = document.getElementById("cheese-crackers").value
+        return(document.getElementById("result").inner = x, document.getElementById("result-3").innerHTML = x3);
+      }
+        /////////////////////////////////// With more side Orders
+      else if(classicCrackers.checked == true & veggieCrackers.checked == true & CheeseCrackers.checked == false)
+      {
+        var x1 = document.getElementById("classic-crackers").value;    
+        var x2 = document.getElementById("veggie-crackers").value;
+        return(document.getElementById("result").innerHTML = x, document.getElementById("result-1").innerHTML = x1, document.getElementById("result-2").innerHTML = x2);
+      }
+      else if(classicCrackers.checked == true & veggieCrackers.checked == false & CheeseCrackers.checked == true)
+      {
+        var x3 = document.getElementById("classic-crackers").value;    
+        var x4 = document.getElementById("cheese-crackers").value;
+        return(document.getElementById("result").innerHTML = x, document.getElementById("result-1").innerHTML = x3, document.getElementById("result-2").innerHTML = x4);
+      }
+      else if(classicCrackers.checked == false & veggieCrackers.checked == true & CheeseCrackers.checked == true)
+      {
+        var x5 = document.getElementById("veggie-crackers").value;    
+        var x6 = document.getElementById("cheese-crackers").value;
+        return(document.getElementById("result").innerHTML = x, document.getElementById("result-1").innerHTML = x5, document.getElementById("result-2").innerHTML = x6);
+      }
+      else if(classicCrackers.checked == true & veggieCrackers.checked == true & CheeseCrackers.checked == true)
+      {
+        var x7 = document.getElementById("classic-crackers").value
+        var x8 = document.getElementById("veggie-crackers").value;    
+        var x9 = document.getElementById("cheese-crackers").value;
+        return(document.getElementById("result").innerHTML = x, document.getElementById("result-1").innerHTML = x7, document.getElementById("result-2").innerHTML = x8, document.getElementById("result-3").innerHTML = x9);
+      }
+      ///////////////////////////////////
+      }
+      else if(this.xm == null)
+      {
+        var xm = document.getElementById("creamy-chicken");
+      if(classicCrackers.checked == true & veggieCrackers.checked == false & CheeseCrackers.checked == false)
+      {
+        var xm1 = document.getElementById("classic-crackers").value;
+        return(document.getElementById("new_result").innerHTML = xm, document.getElementById("new_result-1").innerHTML = xm1);
+      }
+      else if(classicCrackers.checked == false & veggieCrackers.checked == true & CheeseCrackers.checked == false)
+      {
+        var xm2 = document.getElementById("veggie-crackers").value;
+          return(document.getElementById("new_result").innerHTML = xm, document.getElementById("new_result-2").innerHTML = xm2);
+      }
+      else if(classicCrackers.checked == false & veggieCrackers.checked == false & CheeseCrackers.checked == true)
+      {
+        var xm3 = document.getElementById("new_cheese-crackers").value
+        return(document.getElementById("new_result").inner = xm, document.getElementById("new_result-3").innerHTML = xm3);
+      }
+        /////////////////////////////////// With more side Orders
+      else if(classicCrackers.checked == true & veggieCrackers.checked == true & CheeseCrackers.checked == false)
+      {
+        var xm1 = document.getElementById("classic-crackers").value;    
+        var xm2 = document.getElementById("veggie-crackers").value;
+        return(document.getElementById("new_result").innerHTML = xm, document.getElementById("new_result-1").innerHTML = xm1, document.getElementById("new_result-2").innerHTML = xm2);
+      }
+      else if(classicCrackers.checked == true & veggieCrackers.checked == false & CheeseCrackers.checked == true)
+      {
+        var xm3 = document.getElementById("classic-crackers").value;    
+        var xm4 = document.getElementById("cheese-crackers").value;
+        return(document.getElementById("new_result").innerHTML = xm, document.getElementById("new_result-1").innerHTML = xm3, document.getElementById("result-2").innerHTML = xm4);
+      }
+      else if(classicCrackers.checked == false & veggieCrackers.checked == true & CheeseCrackers.checked == true)
+      {
+        var xm5 = document.getElementById("veggie-crackers").value;    
+        var xm6 = document.getElementById("cheese-crackers").value;
+        return(document.getElementById("new_result").innerHTML = x, document.getElementById("new_result-1").innerHTML = xm5, document.getElementById("new_result-2").innerHTML = xm6);
+      }
+      else if(classicCrackers.checked == true & veggieCrackers.checked == true & CheeseCrackers.checked == true)
+      {
+        var xm7 = document.getElementById("classic-crackers").value
+        var xm8 = document.getElementById("veggie-crackers").value;    
+        var xm9 = document.getElementById("cheese-crackers").value;
+        return(document.getElementById("result").innerHTML = xm, document.getElementById("new_result-1").innerHTML = xm7, document.getElementById("new_result-2").innerHTML = xm8, document.getElementById("new_result-3").innerHTML = xm9);
+      }
+      }
+    }
+    else if(ClearChickenSoup.checked == true)
+    {
+      if(this.x == null){
+        ////////////One sidedish///////////////
+      var x = document.getElementById("creamy-chicken");
+      if(classicCrackers.checked == true & veggieCrackers.checked == false & CheeseCrackers.checked == false)
+      {
+        var x1 = document.getElementById("classic-crackers").value;
+        return(document.getElementById("result").innerHTML = x, document.getElementById("result-1").innerHTML = x1);
+      }
+      else if(classicCrackers.checked == false & veggieCrackers.checked == true & CheeseCrackers.checked == false)
+      {
+        var x2 = document.getElementById("veggie-crackers").value;
+          return(document.getElementById("result").innerHTML = x, document.getElementById("result-2").innerHTML = x2);
+      }
+      else if(classicCrackers.checked == false & veggieCrackers.checked == false & CheeseCrackers.checked == true)
+      {
+        var x3 = document.getElementById("cheese-crackers").value
+        return(document.getElementById("result").inner = x, document.getElementById("result-3").innerHTML = x3);
+      }
+        /////////////////////////////////// With more side Orders
+      else if(classicCrackers.checked == true & veggieCrackers.checked == true & CheeseCrackers.checked == false)
+      {
+        var x1 = document.getElementById("classic-crackers").value;    
+        var x2 = document.getElementById("veggie-crackers").value;
+        return(document.getElementById("result").innerHTML = x, document.getElementById("result-1").innerHTML = x1, document.getElementById("result-2").innerHTML = x2);
+      }
+      else if(classicCrackers.checked == true & veggieCrackers.checked == false & CheeseCrackers.checked == true)
+      {
+        var x3 = document.getElementById("classic-crackers").value;    
+        var x4 = document.getElementById("cheese-crackers").value;
+        return(document.getElementById("result").innerHTML = x, document.getElementById("result-1").innerHTML = x3, document.getElementById("result-2").innerHTML = x4);
+      }
+      else if(classicCrackers.checked == false & veggieCrackers.checked == true & CheeseCrackers.checked == true)
+      {
+        var x5 = document.getElementById("veggie-crackers").value;    
+        var x6 = document.getElementById("cheese-crackers").value;
+        return(document.getElementById("result").innerHTML = x, document.getElementById("result-1").innerHTML = x5, document.getElementById("result-2").innerHTML = x6);
+      }
+      else if(classicCrackers.checked == true & veggieCrackers.checked == true & CheeseCrackers.checked == true)
+      {
+        var x7 = document.getElementById("classic-crackers").value
+        var x8 = document.getElementById("veggie-crackers").value;    
+        var x9 = document.getElementById("cheese-crackers").value;
+        return(document.getElementById("result").innerHTML = x, document.getElementById("result-1").innerHTML = x7, document.getElementById("result-2").innerHTML = x8, document.getElementById("result-3").innerHTML = x);
+      }
+    }//////////////////////////////////////////////
+      else if(this.xm == null){
+        ////////////One sidedish///////////////
+      var x = document.getElementById("creamy-chicken");
+      if(classicCrackers.checked == true & veggieCrackers.checked == false & CheeseCrackers.checked == false)
+      {
+        var xm1 = document.getElementById("classic-crackers").value;
+        return(document.getElementById("new_result").innerHTML = xm, document.getElementById("new_result-1").innerHTML = xm1);
+      }
+      else if(classicCrackers.checked == false & veggieCrackers.checked == true & CheeseCrackers.checked == false)
+      {
+        var xm2 = document.getElementById("veggie-crackers").value;
+          return(document.getElementById("new_result").innerHTML = xm, document.getElementById("new_result-2").innerHTML = xm2);
+      }
+      else if(classicCrackers.checked == false & veggieCrackers.checked == false & CheeseCrackers.checked == true)
+      {
+        var xm3 = document.getElementById("cheese-crackers").value
+        return(document.getElementById("new_result").inner = xm, document.getElementById("new_result-3").innerHTML = xm3);
+      }
+        /////////////////////////////////// With more side Orders
+      else if(classicCrackers.checked == true & veggieCrackers.checked == true & CheeseCrackers.checked == false)
+      {
+        var xm1 = document.getElementById("classic-crackers").value;    
+        var xm2 = document.getElementById("veggie-crackers").value;
+        return(document.getElementById("result").innerHTML = xm, document.getElementById("new_result-1").innerHTML = xm1, document.getElementById("new_result-2").innerHTML = xm2);
+      }
+      else if(classicCrackers.checked == true & veggieCrackers.checked == false & CheeseCrackers.checked == true)
+      {
+        var xm3 = document.getElementById("classic-crackers").value;    
+        var xm4 = document.getElementById("cheese-crackers").value;
+        return(document.getElementById("result").innerHTML = xm, document.getElementById("new_result-1").innerHTML = xm3, document.getElementById("new_result-2").innerHTML = xm4);
+      }
+      else if(classicCrackers.checked == false & veggieCrackers.checked == true & CheeseCrackers.checked == true)
+      {
+        var xm5 = document.getElementById("veggie-crackers").value;    
+        var xm6 = document.getElementById("cheese-crackers").value;
+        return(document.getElementById("result").innerHTML = x, document.getElementById("new_result-1").innerHTML = xm5, document.getElementById("new_result-2").innerHTML = xm6);
+      }
+      else if(classicCrackers.checked == true & veggieCrackers.checked == true & CheeseCrackers.checked == true)
+      {
+        var xm7 = document.getElementById("classic-crackers").value
+        var xm8 = document.getElementById("veggie-crackers").value;    
+        var xm9 = document.getElementById("cheese-crackers").value;
+        return(document.getElementById("new_result").innerHTML = xm, document.getElementById("result-1").innerHTML = xm7, document.getElementById("new_result-2").innerHTML = xm8, document.getElementById("new_result-3").innerHTML = xm);
+      }
+      }/////////////////////////
+
+    }
+  } 
 function PlaceBurgerOrder() {
   var bigmac = document.getElementById("big-mac");
   var quarterPounder = document.getElementById("quarter-pounder");  
