@@ -1,4 +1,30 @@
+const http = require('http')
+const fs = require('fs')
+const port = 3000
 
+const server = http.createServer(function(req,res){
+	res.writeHead(200,{'Content-Type' : 'text/html'})
+	fs.readFile('FoodProject.html', function(error,data){
+		if(error){
+          res.writeHead(404)
+          res.write('Error: File Not Found')
+		} else {
+			res.write(data)
+		}
+		res.end()
+	})
+
+})
+
+server.listen(port,function(error){
+  if(error){
+  	console.log('Something Went Wrong')
+  } else {
+    console.log('Server is listening on port' + port)
+  }
+})
+
+/*
 let express = require('express');
 var bodyParser = require('body-parser');
 //var routes = require("./routes");   //new
@@ -18,3 +44,4 @@ app.use('/js', express.static('./public/js'));   //new
 
 let port = process.env.PORT || 3000;
 app.listen(port);
+*/
