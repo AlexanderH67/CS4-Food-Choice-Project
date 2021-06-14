@@ -536,7 +536,7 @@ body {
 <br>
 
 <input type="reset" name="reset" value="Cancel Order" onclick="closeNav1()">
-<input id="PlaceBurgerOrder" onclick="PlaceOrder(); closeNav1()" type="submit" name="send" value="Place Order">
+<input id="PlaceBurgerOrder" onclick="PlaceBurgerOrder(); closeNav1()" type="submit" name="send" value="Place Order" onclick="closeNav1()">
 </fieldset>
 </form>
 </body>
@@ -593,7 +593,7 @@ body {
 <br>
 
 <input type="reset" name="reset" value="Cancel Order" onclick="closeNav3()">
-<input id="PlacePizzaOrder" onclick="PlacePizzaOrder(); closeNav3()" type="submit" name="send" value="Place Order">
+<input id="PlacePizzaOrder" onclick="PlacePizzaOrder(); closeNav3()" type="submit" name="send" value="Place Order" onclick="closeNav3()">
 </fieldset>
 </form>
 </body>
@@ -987,7 +987,7 @@ body {
 <br>
 
 <input type="reset" name="reset" value="Cancel Order" onclick="closeNav4()">
-<input id="PlaceSoupOrder" onclick="PlaceSoupOrder(); closeNav4()" type="submit" name="send" value="Place Order" onclick="closeNav3()">
+<input id="PlaceSoupOrder" onclick="PlaceSoupOrder(); closeNav4()" type="submit" name="send" value="Place Order" onclick="closeNav4()">
 </fieldset>
 </form>
 </body>
@@ -1396,7 +1396,7 @@ body {
     }
     else if(deluxe.checked == true)
     {
-      {
+      
       if (this.x == null) {
 
       x = document.getElementById("deluxe").value;
@@ -1574,7 +1574,7 @@ body {
     }
      else if(meatdeluxe.checked == true)
     {
-      {
+      
       if (this.x == null) {
 
       x = document.getElementById("meat-deluxe").value;
